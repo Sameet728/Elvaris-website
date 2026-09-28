@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Elvaris Funding — Researching Intelligence for Markets',
-    template: '%s | Elvaris Funding',
+    default: 'Elvaris — Researching Intelligence for Markets',
+    template: '%s | Elvaris',
   },
   description:
     'Elvaris is a research and technology initiative exploring artificial intelligence, quantitative research, machine learning, market data, and systematic research.',

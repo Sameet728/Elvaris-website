@@ -31,7 +31,7 @@ export default function Footer() {
               <div className="w-12 h-12 relative flex-shrink-0">
                 <img 
                   src="/logo.png" 
-                  alt="Elvaris Funding Logo" 
+                  alt="Elvaris Research Lab Logo" 
                   className="w-full h-full object-contain rounded-md theme-invert"
                   onError={(e) => {
                     // Fallback to stylized text if image is not yet in public folder
@@ -45,7 +45,7 @@ export default function Footer() {
                   ELVARIS
                 </span>
                 <span className="text-[var(--text-muted)] font-medium text-[10px] tracking-[0.3em] uppercase">
-                  Funding
+                  Research Lab
                 </span>
               </div>
             </Link>

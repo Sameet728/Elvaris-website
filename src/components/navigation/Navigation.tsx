@@ -70,7 +70,7 @@ export default function Navigation({ onSearchOpen }: { onSearchOpen?: () => void
               <div className="w-10 h-10 relative flex-shrink-0">
                 <img 
                   src="/logo.png" 
-                  alt="Elvaris Funding Logo" 
+                  alt="Elvaris Research Lab Logo" 
                   className="w-full h-full object-contain rounded-md theme-invert"
                   onError={(e) => {
                     // Fallback to stylized text if image is not yet in public folder
@@ -84,7 +84,7 @@ export default function Navigation({ onSearchOpen }: { onSearchOpen?: () => void
                   ELVARIS
                 </span>
                 <span className="text-[var(--text-muted)] font-medium text-[9px] tracking-[0.3em] uppercase">
-                  Funding
+                  Research Lab
                 </span>
               </div>
             </Link>
