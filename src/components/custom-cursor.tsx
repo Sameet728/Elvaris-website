@@ -41,7 +41,7 @@ export function CustomCursor() {
   }, [targetPosition]);
 
   return (
-    <>
+    <div className="hidden md:block">
       {/* Premium Custom Cursor: Outer Lerping Ring */}
       <div 
         className="pointer-events-none fixed top-0 left-0 z-[99999] h-8 w-8 rounded-full border border-white/40 transition-opacity duration-300 shadow-[0_0_10px_rgba(255,255,255,0.2)]"
@@ -59,6 +59,6 @@ export function CustomCursor() {
           opacity: visible ? 1 : 0
         }}
       />
-    </>
+    </div>
   );
 }

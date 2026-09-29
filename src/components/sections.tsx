@@ -184,7 +184,7 @@ export function ResearchPipelineSection() {
         </FadeIn>
 
         <div className="relative mx-auto max-w-[1100px] pt-10">
-          {/* Real Pipeline Track */}
+          {/* Real Pipeline Track (Desktop) */}
           <div className="absolute top-[68px] left-[8.33%] right-[8.33%] h-[1px] bg-white/10 hidden lg:block">
             {/* Animated Laser Beam */}
             <div 
@@ -192,8 +192,16 @@ export function ResearchPipelineSection() {
               style={{ animation: 'sweep-line 4s linear infinite' }}
             />
           </div>
+
+          {/* Real Pipeline Track (Mobile) */}
+          <div className="absolute top-[68px] bottom-[68px] left-1/2 w-[1px] -translate-x-1/2 bg-white/10 lg:hidden">
+            <div 
+              className="w-[2px] h-[20%] -translate-x-[0.5px] bg-gradient-to-b from-transparent via-white to-transparent shadow-[0_0_10px_rgba(255,255,255,0.8)]" 
+              style={{ animation: 'sweep-line-vertical 4s linear infinite' }}
+            />
+          </div>
           
-          <div className="grid gap-y-12 sm:grid-cols-2 lg:grid-cols-6 relative z-10">
+          <div className="grid gap-y-12 grid-cols-1 lg:grid-cols-6 relative z-10">
             {steps.map((step, i) => (
               <FadeIn key={step} delay={i * 100}>
                 <div className="group relative flex flex-col items-center justify-start text-center">

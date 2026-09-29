@@ -29,8 +29,10 @@
 }
 
 @layer base {
-  *, *::before, *::after {
-    cursor: none !important;
+  @media (pointer: fine) {
+    *, *::before, *::after {
+      cursor: none !important;
+    }
   }
 }
 
@@ -38,6 +40,11 @@
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+@keyframes sweep-line-vertical {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(300%); }
 }
 
 @keyframes border-spin {
