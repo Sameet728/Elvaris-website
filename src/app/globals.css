@@ -1,26 +1,151 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Custom theme tokens ──────────────────────────────── */
+@theme {
+  --font-sans: var(--font-plus-jakarta), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-inter: var(--font-inter), "Inter", sans-serif;
+
+  --color-background: #000000;
+  --color-foreground: #f2f2f4;
+  --color-muted: #8a8a90;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-accent: #f2f2f4;
+  --color-accent-secondary: #c9c9ce;
+  
+  --color-surface-100: #0b0d10;
+  --color-surface-200: #121215;
+  --color-fg-100: #f2f2f4;
+  --color-fg-200: #c9c9ce;
+  --color-fg-300: #8a8a90;
+
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 42s linear infinite;
+  --animate-border-spin: border-spin 5s linear infinite;
+  --animate-grid-pan: grid-pan 20s linear infinite;
+  --animate-data-flow: data-flow 3s linear infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  *, *::before, *::after {
+    cursor: none !important;
   }
 }
 
+/* ── Keyframes ────────────────────────────────────────── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes border-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes reveal-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes vela-word {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes grid-pan {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
+}
+
+@keyframes data-flow {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+/* ── Base overrides ───────────────────────────────────── */
+html {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #fff;
+  color: #000;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* ── Scrollbar styling ────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #313335;
+  border-radius: 4px;
+}
+
+/* ── Gradient masks ────────────────────────── */
+.marquee-mask {
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.45) 12%,
+    rgba(0, 0, 0, 0.45) 38%,
+    #000 50%,
+    rgba(0, 0, 0, 0.45) 62%,
+    rgba(0, 0, 0, 0.45) 88%,
+    transparent
+  );
+}
+
+.glow-card {
+  position: relative;
+  overflow: hidden;
+}
+.glow-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.1), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Data grid background utility */
+.bg-data-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
