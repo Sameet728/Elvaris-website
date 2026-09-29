@@ -73,8 +73,8 @@ export function Hero() {
             style={{ animationDelay: "60ms" }}
           >
             <h1 className="text-[clamp(40px,6vw,76px)] leading-[1.05] font-medium tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/50 pb-2 drop-shadow-2xl">
-              <span className="whitespace-nowrap">Researching Intelligence</span><br />
-              <span className="whitespace-nowrap">for Markets.</span>
+              <span className="sm:whitespace-nowrap">Researching Intelligence</span><br className="hidden sm:block" />
+              <span className="sm:whitespace-nowrap">for Markets.</span>
             </h1>
           </div>
 

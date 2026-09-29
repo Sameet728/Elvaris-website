@@ -146,7 +146,7 @@ export function AboutSection() {
           </div>
         </FadeIn>
         <FadeIn delay={150}>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {areas.map((area) => (
               <div key={area} className="group flex items-center gap-3 rounded-xl border border-white/5 bg-black/60 p-4 backdrop-blur-md transition-all duration-300 hover:border-white/20 hover:bg-white/[0.03] hover:scale-[1.02]">
                 <div className="h-1.5 w-1.5 rounded-full bg-white/20 transition-all duration-300 group-hover:bg-white group-hover:shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
