@@ -11,23 +11,6 @@ export default function ApplyPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState("");
-  const [selectedFileName, setSelectedFileName] = useState("");
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      if (file.size > 5 * 1024 * 1024) {
-        setError("File size exceeds 5MB limit. Please choose a smaller file.");
-        setSelectedFileName("");
-        e.target.value = "";
-      } else {
-        setError("");
-        setSelectedFileName(file.name);
-      }
-    } else {
-      setSelectedFileName("");
-    }
-  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -40,11 +23,6 @@ export default function ApplyPage() {
     formData.append("subject", `New Internship Application — ${formData.get("first-name")} ${formData.get("last-name")}`);
     formData.append("from_name", "Elvaris Careers");
 
-    const fileInput = form.querySelector<HTMLInputElement>('input[name="attachment"]');
-    if (fileInput && (!fileInput.files || fileInput.files.length === 0)) {
-      formData.delete("attachment");
-    }
-
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -55,7 +33,6 @@ export default function ApplyPage() {
 
       if (data.success) {
         setIsSuccess(true);
-        setSelectedFileName("");
         form.reset();
       } else {
         setError(data.message || "Something went wrong. Please try again.");
@@ -110,7 +87,7 @@ export default function ApplyPage() {
                 </button>
               </div>
             ) : (
-              <form className="mt-12 space-y-8" onSubmit={handleSubmit} encType="multipart/form-data">
+              <form className="mt-12 space-y-8" onSubmit={handleSubmit}>
                 {/* Honeypot for spam protection */}
                 <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
 
@@ -185,6 +162,25 @@ export default function ApplyPage() {
                   </select>
                 </div>
 
+                {/* Resume / CV Link */}
+                <div className="space-y-2">
+                  <label htmlFor="resume_link" className="text-sm font-medium text-white/70">
+                    Resume / CV Link <span className="text-white/30">*</span>
+                  </label>
+                  <input
+                    type="url"
+                    name="resume_link"
+                    id="resume_link"
+                    required
+                    className="block w-full rounded-md border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/30 outline-none ring-1 ring-transparent transition-all hover:bg-white/10 focus:border-white/30 focus:bg-white/10 focus:ring-white/30"
+                    placeholder="https://drive.google.com/file/d/... or Dropbox link"
+                  />
+                  <p className="text-xs text-white/40">
+                    Share a Google Drive, Dropbox, Notion, or hosted PDF link. Please ensure link access is set to <span className="text-white/70">"Anyone with the link can view"</span>.
+                  </p>
+                </div>
+
+                {/* Portfolio / GitHub / LinkedIn */}
                 <div className="space-y-2">
                   <label htmlFor="portfolio" className="text-sm font-medium text-white/70">
                     LinkedIn / GitHub / Portfolio URL <span className="text-white/30">*</span>
@@ -195,32 +191,8 @@ export default function ApplyPage() {
                     id="portfolio"
                     required
                     className="block w-full rounded-md border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/30 outline-none ring-1 ring-transparent transition-all hover:bg-white/10 focus:border-white/30 focus:bg-white/10 focus:ring-white/30"
-                    placeholder="https://github.com/janedoe"
+                    placeholder="https://github.com/janedoe or https://linkedin.com/in/..."
                   />
-                </div>
-
-                {/* Upload Resume */}
-                <div className="space-y-2">
-                  <label htmlFor="attachment" className="text-sm font-medium text-white/70 flex items-center justify-between">
-                    <span>Upload Resume (PDF or DOCX) <span className="text-white/30">*</span></span>
-                    {selectedFileName && (
-                      <span className="text-xs text-white/60 font-mono truncate max-w-[200px]">
-                        {selectedFileName}
-                      </span>
-                    )}
-                  </label>
-                  <input
-                    type="file"
-                    id="attachment"
-                    name="attachment"
-                    required
-                    accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                    onChange={handleFileChange}
-                    className="block w-full rounded-md border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 file:mr-4 file:py-1.5 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-medium file:bg-white/15 file:text-white hover:file:bg-white/25 file:cursor-pointer file:transition-all cursor-pointer outline-none ring-1 ring-transparent hover:bg-white/10 focus:border-white/30 focus:bg-white/10 focus:ring-white/30"
-                  />
-                  <p className="text-xs text-white/40">
-                    Attach your resume up to 5MB. PDF format recommended.
-                  </p>
                 </div>
 
                 {/* Tell more about yourself */}
