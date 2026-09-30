@@ -8,10 +8,12 @@ import {
 } from "../components/sections";
 import { Footer } from "../components/footer";
 import { CursorLight } from "../components/cursor-light";
+import { PipelineBackground } from "../components/PipelineBackground";
 
 export default function HomePage() {
   return (
-    <div className="bg-background text-foreground min-h-screen flex flex-col relative">
+    <div className="bg-transparent text-foreground min-h-screen flex flex-col relative">
+      <PipelineBackground />
       <CursorLight />
       <Navbar />
       <main className="flex-1 relative z-10">
