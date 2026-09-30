@@ -11,6 +11,23 @@ export default function ApplyPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [selectedFileName, setSelectedFileName] = useState("");
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        setError("File size exceeds 5MB limit. Please choose a smaller file.");
+        setSelectedFileName("");
+        e.target.value = "";
+      } else {
+        setError("");
+        setSelectedFileName(file.name);
+      }
+    } else {
+      setSelectedFileName("");
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,6 +40,11 @@ export default function ApplyPage() {
     formData.append("subject", `New Internship Application — ${formData.get("first-name")} ${formData.get("last-name")}`);
     formData.append("from_name", "Elvaris Careers");
 
+    const fileInput = form.querySelector<HTMLInputElement>('input[name="attachment"]');
+    if (fileInput && (!fileInput.files || fileInput.files.length === 0)) {
+      formData.delete("attachment");
+    }
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -33,6 +55,7 @@ export default function ApplyPage() {
 
       if (data.success) {
         setIsSuccess(true);
+        setSelectedFileName("");
         form.reset();
       } else {
         setError(data.message || "Something went wrong. Please try again.");
@@ -66,19 +89,28 @@ export default function ApplyPage() {
                     <path d="m9 12 2 2 4-4" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-medium text-white mb-2">Application Submitted</h3>
+                <h3 className="text-2xl font-medium text-white mb-3">Application Submitted</h3>
+                <p className="text-white/80 text-base mb-2">
+                  You will be notified via email.
+                </p>
                 <p className="text-white/60 text-sm mb-8">
-                  Thank you for your interest in Elvaris. We will review your application and get back to you shortly.
+                  For more details, connect with{" "}
+                  <a
+                    href="mailto:hr@elvariscapital.in"
+                    className="text-white underline hover:text-white/80 transition-colors font-medium"
+                  >
+                    hr@elvariscapital.in
+                  </a>
                 </p>
                 <button
                   onClick={() => setIsSuccess(false)}
-                  className="px-6 py-2 border border-white/10 rounded-lg text-sm hover:bg-white/5 transition-colors text-white"
+                  className="px-6 py-2.5 border border-white/10 rounded-full text-sm hover:bg-white/5 transition-colors text-white"
                 >
                   Submit another application
                 </button>
               </div>
             ) : (
-              <form className="mt-12 space-y-8" onSubmit={handleSubmit}>
+              <form className="mt-12 space-y-8" onSubmit={handleSubmit} encType="multipart/form-data">
                 {/* Honeypot for spam protection */}
                 <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
 
@@ -143,11 +175,13 @@ export default function ApplyPage() {
                     className="block w-full rounded-md border border-white/10 bg-white/5 px-4 py-3 text-white outline-none ring-1 ring-transparent transition-all hover:bg-white/10 focus:border-white/30 focus:bg-white/10 focus:ring-white/30 [&>option]:bg-black [&>option]:text-white"
                   >
                     <option value="" disabled>Select a role</option>
-                    <option value="quant">Quantitative Researcher</option>
-                    <option value="ml">Machine Learning Engineer</option>
-                    <option value="software">Software Engineer</option>
-                    <option value="data">Data Scientist</option>
-                    <option value="other">Other / General Application</option>
+                    <option value="AI Research Intern">AI Research Intern</option>
+                    <option value="Quant Research Intern">Quant Research Intern</option>
+                    <option value="AI / Software Engineering Intern">AI / Software Engineering Intern</option>
+                    <option value="Data Science Intern">Data Science Intern</option>
+                    <option value="FinTech Research Intern">FinTech Research Intern</option>
+                    <option value="Research Automation Intern">Research Automation Intern</option>
+                    <option value="Other / General Application">Other / General Application</option>
                   </select>
                 </div>
 
@@ -165,16 +199,42 @@ export default function ApplyPage() {
                   />
                 </div>
 
+                {/* Upload Resume */}
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium text-white/70">
-                    Brief Cover Letter (Optional)
+                  <label htmlFor="attachment" className="text-sm font-medium text-white/70 flex items-center justify-between">
+                    <span>Upload Resume (PDF or DOCX) <span className="text-white/30">*</span></span>
+                    {selectedFileName && (
+                      <span className="text-xs text-white/60 font-mono truncate max-w-[200px]">
+                        {selectedFileName}
+                      </span>
+                    )}
+                  </label>
+                  <input
+                    type="file"
+                    id="attachment"
+                    name="attachment"
+                    required
+                    accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                    onChange={handleFileChange}
+                    className="block w-full rounded-md border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 file:mr-4 file:py-1.5 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-medium file:bg-white/15 file:text-white hover:file:bg-white/25 file:cursor-pointer file:transition-all cursor-pointer outline-none ring-1 ring-transparent hover:bg-white/10 focus:border-white/30 focus:bg-white/10 focus:ring-white/30"
+                  />
+                  <p className="text-xs text-white/40">
+                    Attach your resume up to 5MB. PDF format recommended.
+                  </p>
+                </div>
+
+                {/* Tell more about yourself */}
+                <div className="space-y-2">
+                  <label htmlFor="about" className="text-sm font-medium text-white/70">
+                    Tell more about yourself <span className="text-white/30">*</span>
                   </label>
                   <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
+                    id="about"
+                    name="about"
+                    required
+                    rows={5}
                     className="block w-full resize-y rounded-md border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/30 outline-none ring-1 ring-transparent transition-all hover:bg-white/10 focus:border-white/30 focus:bg-white/10 focus:ring-white/30"
-                    placeholder="Tell us a bit about your background and why you want to join Elvaris..."
+                    placeholder="Tell us about your background, key projects, skills, and what excites you about quantitative research and AI at Elvaris..."
                   />
                 </div>
 
