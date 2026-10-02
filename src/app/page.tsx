@@ -214,6 +214,7 @@ export default function HomePage() {
     const onVisChange = () => { hidden = document.hidden; last = performance.now(); };
     document.addEventListener('visibilitychange', onVisChange);
     
+    const ld = document.getElementById('ld');
     let to2: any;
     
     function start() {
@@ -225,7 +226,7 @@ export default function HomePage() {
     } else {
       const rows = ld?.querySelectorAll('div');
       if (rows) {
-        rows.forEach((r, i) => {
+        rows.forEach((r: Element, i: number) => {
           setTimeout(() => r.classList.add('on'), i * 170);
         });
       }
