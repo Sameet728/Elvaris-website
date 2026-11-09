@@ -314,7 +314,7 @@ export function StratMarketProduct() {
   }, [candles, strat, selectedStrategy, currentTickPrice]);
 
   return (
-    <section id="stratmarket" className="relative z-20 w-full bg-[#050608] text-white pt-[58px] pb-6 sm:pt-[64px] sm:pb-8 overflow-hidden border-b border-white/[0.08]">
+    <section id="stratmarket" className="relative z-20 w-full bg-transparent text-white pt-[58px] pb-6 sm:pt-[64px] sm:pb-8 overflow-hidden border-b border-white/[0.08]">
       
       {/* Background ambient light */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[1px] bg-gradient-to-r from-transparent via-[#a3e635]/40 to-transparent" />
