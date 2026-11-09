@@ -568,11 +568,11 @@ export function StratMarketProduct() {
                   <div className="flex items-center gap-2.5 text-zinc-500 text-[10px]">
                     <span className="hidden md:inline">Continuous Tick Stream</span>
                     <a
-                      href="https://strat-market-chi.vercel.app/"
+                      href={`https://strat-market-chi.vercel.app/chart/${strat.id}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-zinc-400 hover:text-white flex items-center gap-1 transition-colors"
-                      title="Open full platform on StratMarket"
+                      title={`Open full ${strat.id} chart terminal`}
                     >
                       <Maximize2 className="size-3" />
                     </a>
@@ -584,26 +584,26 @@ export function StratMarketProduct() {
             
             {/* Left TradingView Toolbar */}
             <div className="hidden sm:flex w-[40px] border-r border-white/[0.08] bg-[#030303] flex-col items-center py-1.5 gap-2 text-zinc-500 shrink-0 select-none">
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Crosshair (Open StratMarket)"><Crosshair className="size-3.5 text-zinc-300" /></a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Trend Line (Open StratMarket)"><Slash className="size-3.5" /></a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Gann & Fibonacci (Open StratMarket)"><Compass className="size-3.5" /></a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Geometric Shapes (Open StratMarket)"><PenTool className="size-3.5" /></a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Text Annotation (Open StratMarket)"><Type className="size-3.5" /></a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Patterns (Open StratMarket)"><Shapes className="size-3.5" /></a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Measure Distance (Open StratMarket)"><Ruler className="size-3.5 text-zinc-400" /></a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title={`Crosshair (Open ${strat.id} Chart)`}><Crosshair className="size-3.5 text-zinc-300" /></a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title={`Trend Line (Open ${strat.id} Chart)`}><Slash className="size-3.5" /></a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title={`Gann & Fibonacci (Open ${strat.id} Chart)`}><Compass className="size-3.5" /></a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title={`Geometric Shapes (Open ${strat.id} Chart)`}><PenTool className="size-3.5" /></a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title={`Text Annotation (Open ${strat.id} Chart)`}><Type className="size-3.5" /></a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title={`Patterns (Open ${strat.id} Chart)`}><Shapes className="size-3.5" /></a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title={`Measure Distance (Open ${strat.id} Chart)`}><Ruler className="size-3.5 text-zinc-400" /></a>
               <div className="w-4 h-[1px] bg-zinc-800 my-0.5" />
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Zoom In (Open StratMarket)"><Search className="size-3.5" /></a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Magnet Mode (Open StratMarket)"><Magnet className="size-3.5" /></a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors mt-auto cursor-pointer" title="Clear All (Open StratMarket)"><Trash2 className="size-3.5 hover:text-red-400" /></a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title={`Zoom In (Open ${strat.id} Chart)`}><Search className="size-3.5" /></a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title={`Magnet Mode (Open ${strat.id} Chart)`}><Magnet className="size-3.5" /></a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors mt-auto cursor-pointer" title={`Clear All (Open ${strat.id} Chart)`}><Trash2 className="size-3.5 hover:text-red-400" /></a>
             </div>
 
-            {/* Central Chart Viewport - Click redirects to main StratMarket website */}
+            {/* Central Chart Viewport - Click directly opens the live chart page */}
             <a
-              href="https://strat-market-chi.vercel.app/"
+              href={`https://strat-market-chi.vercel.app/chart/${strat.id}`}
               target="_blank"
               rel="noopener noreferrer"
               className="relative flex-1 h-full overflow-hidden bg-black block cursor-pointer group/chart select-none focus:outline-none"
-              title="Click to visit the main StratMarket website (strat-market-chi.vercel.app)"
+              title={`Click to open direct live interactive chart for ${strat.name} (${strat.id})`}
             >
               
               {chart && (
@@ -899,8 +899,8 @@ export function StratMarketProduct() {
 
               {/* Floating Pill Cue on Chart Hover */}
               <div className="absolute top-3 right-3 z-20 pointer-events-none opacity-0 group-hover/chart:opacity-100 transition-all duration-200 transform translate-y-1 group-hover/chart:translate-y-0">
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/95 border border-[#a3e635]/40 text-[#a3e635] text-[11px] font-mono shadow-[0_4px_24px_rgba(0,0,0,0.9)] backdrop-blur-md">
-                  <span>Visit StratMarket Platform</span>
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/95 border border-[#a3e635]/50 text-[#a3e635] text-[11px] font-mono shadow-[0_4px_24px_rgba(0,0,0,0.95)] backdrop-blur-md">
+                  <span>Open {strat.id} Live Chart</span>
                   <ExternalLink className="size-3 text-[#a3e635]" />
                 </div>
               </div>
@@ -978,12 +978,12 @@ export function StratMarketProduct() {
 
                 {/* Direct Action Link */}
                 <a
-                  href="https://strat-market-chi.vercel.app/"
+                  href={`https://strat-market-chi.vercel.app/chart/${strat.id}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-auto block text-center py-2.5 rounded-lg bg-white/10 hover:bg-[#a3e635] text-white hover:text-black font-bold text-xs uppercase tracking-wider transition-colors"
                 >
-                  Open StratMarket Platform ↗
+                  Open {strat.id} Live Chart ↗
                 </a>
               </aside>
             )}
@@ -992,15 +992,15 @@ export function StratMarketProduct() {
           {/* Bottom Terminal Status Bar */}
           <div className="h-[30px] sm:h-[34px] bg-black border-t border-white/[0.08] px-3 sm:px-4 flex items-center justify-between text-zinc-500 font-mono text-[11px] select-none">
             <div className="flex items-center gap-2 sm:gap-4">
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer text-[#a3e635] font-bold">1D</a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">7D</a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">1M</a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">3M</a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">6M</a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">YTD</a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">1Y</a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">5Y</a>
-              <a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">ALL</a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer text-[#a3e635] font-bold">1D</a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">7D</a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">1M</a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">3M</a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">6M</a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">YTD</a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">1Y</a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">5Y</a>
+              <a href={`https://strat-market-chi.vercel.app/chart/${strat.id}`} target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">ALL</a>
             </div>
 
             <div className="flex items-center gap-3">
