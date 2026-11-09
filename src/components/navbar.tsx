@@ -36,10 +36,10 @@ export function Navbar() {
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-out ${
         scrolled 
           ? "border-b border-white/[0.04] bg-[#020202]/60 backdrop-blur-2xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]" 
-          : "border-b border-transparent bg-transparent py-2"
+          : "border-b border-transparent bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-[72px] max-w-[1240px] items-center justify-between px-6">
+      <nav className="mx-auto flex h-[58px] sm:h-[62px] max-w-[1240px] items-center justify-between px-6">
         
         {/* Logo and Brand */}
         <Link aria-label="Elvaris Capital home" className="flex items-center group" href="/">
@@ -67,7 +67,7 @@ export function Navbar() {
                 {link.name}
                 {/* Glowing bottom indicator */}
                 <span 
-                  className={`absolute inset-x-4 -bottom-[23px] h-[1px] transition-all duration-500 ${
+                  className={`absolute inset-x-4 -bottom-[18px] sm:-bottom-[19px] h-[1px] transition-all duration-500 ${
                     isActive 
                       ? "bg-gradient-to-r from-transparent via-white/80 to-transparent opacity-100 shadow-[0_0_8px_rgba(255,255,255,0.8)]" 
                       : "bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100"
