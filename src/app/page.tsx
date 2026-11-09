@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 import { Navbar } from "../components/navbar";
+import { StratMarketProduct } from "../components/StratMarketProduct";
+import { Footer } from "../components/footer";
 
 export default function HomePage() {
   useEffect(() => {
@@ -214,24 +216,9 @@ export default function HomePage() {
     const onVisChange = () => { hidden = document.hidden; last = performance.now(); };
     document.addEventListener('visibilitychange', onVisChange);
     
-    const ld = document.getElementById('ld');
-    let to2: any;
-    
-    function start() {
-      ready = true; t0 = T; ld?.classList.add('off'); document.body.classList.add('go');
-    }
-    
-    if (RM) {
-      ld?.remove(); ready = true; document.body.classList.add('go');
-    } else {
-      const rows = ld?.querySelectorAll('div');
-      if (rows) {
-        rows.forEach((r: Element, i: number) => {
-          setTimeout(() => r.classList.add('on'), i * 170);
-        });
-      }
-      to2 = setTimeout(start, 1500);
-    }
+    ready = true;
+    t0 = T;
+    document.body.classList.add('go');
     
     return () => {
       window.removeEventListener('resize', size);
@@ -239,7 +226,6 @@ export default function HomePage() {
       window.removeEventListener('scroll', upd);
       document.removeEventListener('visibilitychange', onVisChange);
       cancelAnimationFrame(reqId);
-      clearTimeout(to2);
       document.body.classList.remove('go');
     };
   }, []);
@@ -273,27 +259,10 @@ export default function HomePage() {
         .elvaris-bg-page footer { position: relative; z-index: 3; background: #000; padding: 30px 5vw; border-top: 1px solid var(--line); font: 400 10px var(--mono); letter-spacing: .2em; color: var(--t3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
         .rv { opacity: 0; transform: translateY(18px); transition: opacity 1.2s var(--ease), transform 1.2s var(--ease); transition-delay: calc(var(--i,0)*.12s); }
         body.go .rv { opacity: 1; transform: none; }
-        #ld { position: fixed; inset: 0; z-index: 50; background: #000; display: flex; align-items: center; justify-content: center; font: 400 10px/2 var(--mono); letter-spacing: .2em; color: var(--t2); transition: opacity .6s; }
-        #ld div { opacity: 0; transition: opacity .3s; white-space: pre; }
-        #ld div.on { opacity: 1; }
-        #ld em { font-style: normal; color: var(--gold); }
-        #ld.off { opacity: 0; pointer-events: none; }
         @media(max-width: 720px) { .prog { display: none; } .hero { bottom: 18vh; } }
         @media(prefers-reduced-motion: reduce) { .rv { transition: none; opacity: 1; transform: none; } }
       `}} />
 
-      <div id="ld">
-        <span>
-          <div className="on">ELVARIS CAPITAL</div>
-          <div>INITIALIZING RESEARCH ENGINE</div>
-          <div> </div>
-          <div>DATA STREAM ........ <em>CONNECTED</em></div>
-          <div>MARKET ENGINE ...... <em>ONLINE</em></div>
-          <div>RESEARCH CORE ...... <em>ONLINE</em></div>
-          <div>VALIDATION .......... <em>READY</em></div>
-        </span>
-      </div>
-      
       <div id="grid"></div>
       <canvas id="c"></canvas>
       
@@ -301,29 +270,46 @@ export default function HomePage() {
         <Navbar />
       </div>
 
-      <main id="track">
+      <main id="track" className="relative">
         <div className="stick" id="stick">
           <div className="hero" id="hero">
             <div className="eye rv" style={{ '--i': 0 } as React.CSSProperties}>ELVARIS CAPITAL / QUANTITATIVE RESEARCH SYSTEM</div>
             <h1 className="rv" style={{ '--i': 2 } as React.CSSProperties}>AUTONOMOUS<br/>MARKET<br/>RESEARCH.</h1>
             <p className="sub rv" style={{ '--i': 4 } as React.CSSProperties}>Infrastructure for discovering, testing and validating systematic trading strategies.</p>
+            <div className="rv pointer-events-auto" style={{ '--i': 5, marginTop: '22px' } as React.CSSProperties}>
+              <a 
+                href="#live-product-deployment" 
+                className="inline-flex items-center gap-2 rounded-full border border-[#a3e635]/40 bg-[#a3e635]/10 px-4 py-1.5 text-[11px] font-mono text-[#a3e635] hover:bg-[#a3e635]/20 hover:border-[#a3e635]/60 transition-all shadow-[0_0_15px_rgba(163,230,53,0.15)]"
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a3e635] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a3e635]"></span>
+                </span>
+                <span>LIVE PRODUCT DEPLOYMENT ↓</span>
+              </a>
+            </div>
           </div>
           <div className="cap" id="cap"><b></b><h3></h3><p></p></div>
           <div className="prog"><i id="pg"></i></div>
         </div>
       </main>
 
-      <section className="end">
-        <div className="lg" style={{ color: 'var(--gold)', marginBottom: '22px', font: '400 10px var(--mono)', letterSpacing: '.3em' }}>RESEARCH OUTPUT</div>
-        <h2>Validated research.</h2>
-        <p>Only structures that survive validation are carried forward.</p>
-        <a className="btn" href="#">Enter Platform</a>
+      <section className="end" id="live-product-deployment">
+        <div className="lg" style={{ color: 'var(--gold)', marginBottom: '22px', font: '400 10px var(--mono)', letterSpacing: '.3em' }}>LIVE PRODUCT DEPLOYMENT</div>
+        <h2>Validated research in live markets.</h2>
+        <p>Quantitative models that survive our 6-stage validation pipeline are deployed to our institutional strategy marketplace with real-time execution signals and tick-level performance verification.</p>
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '24px' }}>
+          <a className="btn" href="#stratmarket" style={{ borderColor: '#a3e635', color: '#a3e635' }}>Explore Terminal Chart Below ↓</a>
+          <a className="btn" href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer">Launch Marketplace Platform ↗</a>
+        </div>
       </section>
-      
-      <footer>
-        <span>ELVARIS CAPITAL</span>
-        <span>© 2026</span>
-      </footer>
+
+      {/* STRATMARKET SHIFTED DIRECTLY BELOW LIVE PRODUCT DEPLOYMENT */}
+      <div className="relative z-20 bg-[#0a0a0c]">
+        <StratMarketProduct />
+      </div>
+
+      <Footer />
     </div>
   );
 }

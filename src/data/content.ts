@@ -215,6 +215,23 @@ export const projects = [
     limitations: 'Analytics are constrained by the reporting frequency and granularity of ETF issuers.',
     futureWork: 'Expanding coverage to mutual funds and adding more advanced factor analysis models.',
   },
+  {
+    id: '03',
+    slug: 'stratmarket',
+    link: 'https://strat-market-chi.vercel.app/',
+    title: 'StratMarket',
+    description: 'An institutional algorithmic trading strategy marketplace by Elvaris Capital. Discover, backtest, and stream verified Pine Script v5 and Python MT5 strategies with real-time execution signals and interactive charts showing live trades.',
+    status: 'Active',
+    tags: ['Algorithmic Marketplace', 'Quantitative Trading', 'Pine Script v5', 'Python MT5', 'Live Execution'],
+    overview: 'StratMarket is the flagship quantitative algorithmic trading strategy marketplace engineered by Elvaris Capital. It enables traders, institutions, and prop firms to access tick-level audited trading models, view real-time candlestick execution charts with overlayed trade markers, and stream automated execution signals.',
+    researchQuestion: 'How can systematic algorithmic strategies be verified, stress-tested, and transparently delivered to market participants with zero curve-fitting and realistic execution drag modeling?',
+    architecture: 'High-performance execution engine combining TradingView Pine Script v5 private scripts, Python MetaTrader 5 bridges, sub-50ms VPS signal dispatch, and interactive client-side charting overlays.',
+    dataset: 'Tick-level institutional feeds for major currency pairs and commodities including XAUUSD, EURUSD, NAS100, and US30 across multi-year historical datasets.',
+    methodology: 'Every strategy undergoes rigorous out-of-sample stress testing (30% holdout), 1,000+ Monte Carlo reshufflings, realistic transaction costs ($2.50/lot commission, live spreads, and 1.0+ pip slippage modeling), and session liquidity gating.',
+    results: 'Deployed and active with models demonstrating peak win rates up to 88.5%, profit factors exceeding 9.3, and ultra-low drawdowns under 1.5%.',
+    limitations: 'Performance in extreme black swan events depends on underlying broker liquidity and execution spreads.',
+    futureWork: 'Adding direct FIX protocol broker routing, institutional portfolio multi-strategy risk parity allocations, and expanded futures contract coverage.',
+  },
 ];
 
 // ===== BLOG DATA =====
