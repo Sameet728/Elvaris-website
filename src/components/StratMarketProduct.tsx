@@ -341,16 +341,16 @@ export function StratMarketProduct() {
               <span className="text-white/70 font-mono text-xs">By Elvaris Capital</span>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl xl:text-[42px] leading-[1.1] font-extralight tracking-tight text-white">
-              Institutional algorithmic trading.{" "}
-              <span className="font-light text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-[#a3e635]">
+            {/* Headline - Lowered text size & brought side-by-side */}
+            <h1 className="text-base sm:text-lg lg:text-[20px] xl:text-[21px] leading-snug font-light tracking-tight text-white">
+              <span>Institutional algorithmic trading.</span>{" "}
+              <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-[#a3e635]">
                 Live terminal execution & verified trades.
               </span>
             </h1>
 
             {/* Description Narrative */}
-            <p className="text-sm sm:text-base text-zinc-400 font-light leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
               Experience the live strategy terminal from StratMarket. Automated Pine Script v5 & Python MT5 algorithms with visual position tool boxes, real-time signal dispatch, and zero curve-fitting.
             </p>
 
