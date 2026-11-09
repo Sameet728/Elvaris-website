@@ -270,44 +270,33 @@ export default function HomePage() {
         <Navbar />
       </div>
 
+      {/* STRATMARKET PROMOTION & TERMINAL CHART AT THE VERY TOP */}
+      <div className="relative z-20">
+        <StratMarketProduct />
+      </div>
+
       <main id="track" className="relative">
+        <div id="research-pipeline" className="absolute -top-20" />
         <div className="stick" id="stick">
           <div className="hero" id="hero">
             <div className="eye rv" style={{ '--i': 0 } as React.CSSProperties}>ELVARIS CAPITAL / QUANTITATIVE RESEARCH SYSTEM</div>
             <h1 className="rv" style={{ '--i': 2 } as React.CSSProperties}>AUTONOMOUS<br/>MARKET<br/>RESEARCH.</h1>
             <p className="sub rv" style={{ '--i': 4 } as React.CSSProperties}>Infrastructure for discovering, testing and validating systematic trading strategies.</p>
-            <div className="rv pointer-events-auto" style={{ '--i': 5, marginTop: '22px' } as React.CSSProperties}>
-              <a 
-                href="#live-product-deployment" 
-                className="inline-flex items-center gap-2 rounded-full border border-[#a3e635]/40 bg-[#a3e635]/10 px-4 py-1.5 text-[11px] font-mono text-[#a3e635] hover:bg-[#a3e635]/20 hover:border-[#a3e635]/60 transition-all shadow-[0_0_15px_rgba(163,230,53,0.15)]"
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a3e635] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a3e635]"></span>
-                </span>
-                <span>LIVE PRODUCT DEPLOYMENT ↓</span>
-              </a>
-            </div>
           </div>
           <div className="cap" id="cap"><b></b><h3></h3><p></p></div>
           <div className="prog"><i id="pg"></i></div>
         </div>
       </main>
 
-      <section className="end" id="live-product-deployment">
-        <div className="lg" style={{ color: 'var(--gold)', marginBottom: '22px', font: '400 10px var(--mono)', letterSpacing: '.3em' }}>LIVE PRODUCT DEPLOYMENT</div>
+      <section className="end" id="research-output">
+        <div className="lg" style={{ color: 'var(--gold)', marginBottom: '22px', font: '400 10px var(--mono)', letterSpacing: '.3em' }}>RESEARCH OUTPUT / DEPLOYED PLATFORMS</div>
         <h2>Validated research in live markets.</h2>
         <p>Quantitative models that survive our 6-stage validation pipeline are deployed to our institutional strategy marketplace with real-time execution signals and tick-level performance verification.</p>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '24px' }}>
-          <a className="btn" href="#stratmarket" style={{ borderColor: '#a3e635', color: '#a3e635' }}>Explore Terminal Chart Below ↓</a>
+          <a className="btn" href="#stratmarket" style={{ borderColor: '#a3e635', color: '#a3e635' }}>Back to Terminal Chart ↑</a>
           <a className="btn" href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer">Launch Marketplace Platform ↗</a>
         </div>
       </section>
-
-      {/* STRATMARKET SHIFTED DIRECTLY BELOW LIVE PRODUCT DEPLOYMENT */}
-      <div className="relative z-20 bg-[#0a0a0c]">
-        <StratMarketProduct />
-      </div>
 
       <Footer />
     </div>
