@@ -444,12 +444,12 @@ export function StratMarketProduct() {
           <div className="lg:col-span-7">
             <div className="relative group">
               {/* Subtle ambient glow behind terminal */}
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#a3e635]/15 via-emerald-500/10 to-[#a3e635]/15 blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none" />
+              <div className="absolute -inset-1 rounded-2xl bg-black/60 blur-xl opacity-80 pointer-events-none" />
 
-              <div className="relative rounded-2xl border border-white/[0.12] bg-[#0c0d14] overflow-hidden shadow-[0_25px_70px_-15px_rgba(0,0,0,0.95),0_0_40px_rgba(163,230,53,0.06),inset_0_1px_0_rgba(255,255,255,0.12)]">
+              <div className="relative rounded-2xl border border-white/[0.08] bg-black overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.98),inset_0_1px_0_rgba(255,255,255,0.06)]">
             
                 {/* Pro Terminal Top Header Bar */}
-                <div className="h-[44px] bg-[#0e1017] border-b border-[#20242f] px-3 sm:px-4 flex items-center justify-between text-xs select-none">
+                <div className="h-[44px] bg-black border-b border-white/[0.08] px-3 sm:px-4 flex items-center justify-between text-xs select-none">
                   
                   {/* Left items: Window Dots + Logo + Symbol */}
                   <div className="flex items-center gap-2.5 sm:gap-3">
@@ -536,7 +536,7 @@ export function StratMarketProduct() {
                 </div>
 
                 {/* Sub-header Bar (TradingView style indicators + tools) */}
-                <div className="h-[30px] bg-[#131722] border-b border-[#232733] px-3 sm:px-4 flex items-center justify-between text-zinc-400 text-[11px] font-mono select-none">
+                <div className="h-[30px] bg-[#030303] border-b border-white/[0.08] px-3 sm:px-4 flex items-center justify-between text-zinc-400 text-[11px] font-mono select-none">
                   <div className="flex items-center gap-2.5">
                     <div className="flex items-center gap-1.5 text-zinc-300 hover:text-white cursor-pointer">
                       <CandlestickChart className="size-3.5 text-zinc-400" />
@@ -566,10 +566,10 @@ export function StratMarketProduct() {
                 </div>
 
           {/* Main Chart Area with Left Tools + SVG Canvas + Optional Side Panel */}
-          <div className="relative flex w-full h-[430px] sm:h-[470px] lg:h-[490px] bg-[#131722]">
+          <div className="relative flex w-full h-[430px] sm:h-[470px] lg:h-[490px] bg-black">
             
             {/* Left TradingView Toolbar */}
-            <div className="hidden sm:flex w-[40px] border-r border-[#2a2e39] bg-[#131722] flex-col items-center py-1.5 gap-2 text-zinc-500 shrink-0 select-none">
+            <div className="hidden sm:flex w-[40px] border-r border-white/[0.08] bg-[#030303] flex-col items-center py-1.5 gap-2 text-zinc-500 shrink-0 select-none">
               <button className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors" title="Crosshair"><Crosshair className="size-3.5 text-zinc-300" /></button>
               <button className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors" title="Trend Line"><Slash className="size-3.5" /></button>
               <button className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors" title="Gann & Fibonacci"><Compass className="size-3.5" /></button>
@@ -584,7 +584,7 @@ export function StratMarketProduct() {
             </div>
 
             {/* Central Chart Viewport */}
-            <div className="relative flex-1 h-full overflow-hidden bg-[#131722]">
+            <div className="relative flex-1 h-full overflow-hidden bg-black">
               
               {chart && (
                 <svg
@@ -615,7 +615,7 @@ export function StratMarketProduct() {
                           x2={chart.chartW}
                           y1={y}
                           y2={y}
-                          stroke="#1e222d"
+                          stroke="#111115"
                           strokeWidth="1"
                           strokeDasharray="2 3"
                         />
@@ -644,7 +644,7 @@ export function StratMarketProduct() {
                         x2={x}
                         y1="0"
                         y2={chart.chartH}
-                        stroke="#1e222d"
+                        stroke="#111115"
                         strokeWidth="1"
                         strokeDasharray="2 3"
                       />
@@ -657,7 +657,7 @@ export function StratMarketProduct() {
                     x2={chart.chartW}
                     y1="0"
                     y2={chart.chartH}
-                    stroke="#2a2e39"
+                    stroke="#18181b"
                     strokeWidth="1"
                   />
 
@@ -667,7 +667,7 @@ export function StratMarketProduct() {
                     x2={chart.width}
                     y1={chart.chartH}
                     y2={chart.chartH}
-                    stroke="#2a2e39"
+                    stroke="#18181b"
                     strokeWidth="1"
                   />
 
@@ -877,7 +877,7 @@ export function StratMarketProduct() {
 
             {/* Strategy Side Panel (Collapsible Drawer matching chunk_chart.js) */}
             {panelOpen && (
-              <aside className="w-[320px] bg-[#09090b] border-l border-[#1f1f23] p-4 flex flex-col gap-4 text-xs font-mono overflow-y-auto animate-fadeIn shrink-0">
+              <aside className="w-[320px] bg-[#040404] border-l border-white/[0.08] p-4 flex flex-col gap-4 text-xs font-mono overflow-y-auto animate-fadeIn shrink-0">
                 <div className="flex items-center justify-between border-b border-[#1f1f23] pb-3">
                   <div className="flex items-center gap-2">
                     <span className="bg-white/15 px-2 py-0.5 rounded text-[11px] font-bold text-white">{strat.id}</span>
@@ -959,7 +959,7 @@ export function StratMarketProduct() {
           </div>
 
           {/* Bottom Terminal Status Bar */}
-          <div className="h-[30px] sm:h-[34px] bg-[#09090b] border-t border-[#1f1f23] px-3 sm:px-4 flex items-center justify-between text-zinc-500 font-mono text-[11px] select-none">
+          <div className="h-[30px] sm:h-[34px] bg-black border-t border-white/[0.08] px-3 sm:px-4 flex items-center justify-between text-zinc-500 font-mono text-[11px] select-none">
             <div className="flex items-center gap-2 sm:gap-4">
               <span className="hover:text-zinc-300 cursor-pointer text-[#a3e635] font-bold">1D</span>
               <span className="hover:text-zinc-300 cursor-pointer">7D</span>
