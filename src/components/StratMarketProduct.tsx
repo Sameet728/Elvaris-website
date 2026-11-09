@@ -307,49 +307,57 @@ export function StratMarketProduct() {
   }, [candles, strat, selectedStrategy, currentTickPrice]);
 
   return (
-    <section id="stratmarket" className="relative z-20 w-full bg-[#0a0a0c] text-white pt-[76px] pb-12 sm:pt-[82px] sm:pb-20 overflow-hidden border-b border-white/[0.08]">
+    <section id="stratmarket" className="relative z-20 w-full bg-[#0a0a0c] text-white pt-20 pb-12 sm:pt-24 sm:pb-20 overflow-hidden border-b border-white/[0.08]">
       
       {/* Background ambient light */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#a3e635]/40 to-transparent" />
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[650px] h-[250px] bg-[#26a69a]/[0.025] blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[650px] h-[300px] bg-[#26a69a]/[0.025] blur-[140px] rounded-full pointer-events-none" />
 
-      <div className="mx-auto max-w-[1280px] px-3 sm:px-6">
+      <div className="mx-auto max-w-[1280px] px-4 sm:px-6">
 
-        {/* Compact Top Bar Above Chart */}
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-3 sm:mb-4">
-          <div className="flex items-center gap-2.5">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#a3e635]/40 bg-[#a3e635]/10 px-3 py-1 shadow-[0_0_15px_rgba(163,230,53,0.12)]">
+        {/* Promo Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-6 sm:mb-8">
+          <div className="space-y-3 max-w-3xl">
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-[#a3e635]/40 bg-[#a3e635]/10 px-4 py-1.5 shadow-[0_0_20px_rgba(163,230,53,0.15)]">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a3e635] opacity-80"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a3e635]"></span>
               </span>
-              <span className="font-mono text-[11px] font-bold tracking-wider uppercase text-[#a3e635]">
-                StratMarket
+              <span className="font-mono text-xs font-semibold tracking-wider uppercase text-[#a3e635]">
+                StratMarket Launch · Product Showcase
               </span>
               <span className="text-white/20">|</span>
-              <span className="text-white/80 font-mono text-[11px]">Live Quantitative Trading Terminal & Verified Trades</span>
+              <span className="text-white/70 font-mono text-xs">By Elvaris Capital</span>
             </div>
+
+            <h2 className="text-[clamp(28px,3.8vw,48px)] leading-[1.08] font-light tracking-tight text-white">
+              Institutional algorithmic trading.<br />
+              <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-[#a3e635]">
+                Live terminal execution & verified trades.
+              </span>
+            </h2>
           </div>
 
-          <div className="flex items-center gap-2.5">
+          {/* Quick CTA Actions */}
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
               href="https://strat-market-chi.vercel.app/chart/PS-04"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#a3e635] px-4 py-1.5 text-xs font-mono font-bold uppercase tracking-wider text-black hover:bg-[#bef264] transition-all shadow-[0_0_20px_rgba(163,230,53,0.3)] active:scale-95"
+              className="group relative inline-flex items-center gap-2.5 rounded-full bg-[#a3e635] px-6 py-3 text-xs font-mono font-bold uppercase tracking-wider text-black transition-all duration-300 hover:bg-[#bef264] hover:shadow-[0_0_35px_rgba(163,230,53,0.4)] active:scale-95"
             >
-              <span>Full Screen Terminal</span>
-              <ArrowUpRight className="size-3.5" />
+              <span>Open Live Terminal</span>
+              <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
 
             <a
               href="https://strat-market-chi.vercel.app/market"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1 text-xs font-mono text-zinc-400 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-xs font-mono font-medium uppercase tracking-wider text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 backdrop-blur-md"
             >
-              <span>Marketplace</span>
-              <ChevronRight className="size-3.5 text-zinc-500" />
+              <span>Browse Catalog</span>
+              <ChevronRight className="size-4 text-white/50" />
             </a>
           </div>
         </div>
