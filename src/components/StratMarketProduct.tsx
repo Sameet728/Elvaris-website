@@ -263,8 +263,8 @@ export function StratMarketProduct() {
         yLow,
         isUp,
         // TradingView candle colors
-        color: isUp ? "#26a69a" : "#ef5350",
-        fill: isUp ? "#26a69a" : "#ef5350"
+        color: isUp ? "#089981" : "#f23645",
+        fill: isUp ? "#089981" : "#f23645"
       };
     });
 
@@ -314,11 +314,11 @@ export function StratMarketProduct() {
   }, [candles, strat, selectedStrategy, currentTickPrice]);
 
   return (
-    <section id="stratmarket" className="relative z-20 w-full bg-[#0a0a0c] text-white pt-[66px] pb-6 sm:pt-[70px] sm:pb-8 overflow-hidden border-b border-white/[0.08]">
+    <section id="stratmarket" className="relative z-20 w-full bg-[#050608] text-white pt-[58px] pb-6 sm:pt-[64px] sm:pb-8 overflow-hidden border-b border-white/[0.08]">
       
       {/* Background ambient light */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#a3e635]/40 to-transparent" />
-      <div className="absolute top-12 left-1/3 -translate-x-1/2 w-[800px] h-[360px] bg-[#26a69a]/[0.035] blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[1px] bg-gradient-to-r from-transparent via-[#a3e635]/40 to-transparent" />
+      <div className="absolute top-8 right-1/4 w-[700px] h-[400px] bg-gradient-to-br from-[#a3e635]/[0.06] via-[#089981]/[0.04] to-transparent blur-[160px] rounded-full pointer-events-none" />
 
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
 
@@ -326,89 +326,97 @@ export function StratMarketProduct() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-center">
 
           {/* LEFT SIDE: The Written Work */}
-          <div className="lg:col-span-5 flex flex-col justify-center space-y-3 sm:space-y-4">
+          <div className="lg:col-span-5 flex flex-col justify-center space-y-3 sm:space-y-3.5">
             
             {/* Launch Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#a3e635]/40 bg-[#a3e635]/10 px-3 py-1 shadow-[0_0_15px_rgba(163,230,53,0.15)] w-fit">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#a3e635]/35 bg-[#a3e635]/[0.08] px-3 py-1 shadow-[0_0_20px_rgba(163,230,53,0.15)] w-fit backdrop-blur-md">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a3e635] opacity-80"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a3e635]"></span>
               </span>
-              <span className="font-mono text-[11px] font-semibold tracking-wider uppercase text-[#a3e635]">
-                StratMarket Launch · Product Showcase
+              <span className="font-mono text-[10.5px] font-semibold tracking-wider uppercase text-[#a3e635]">
+                StratMarket Launch // Product Showcase
               </span>
               <span className="text-white/20">|</span>
-              <span className="text-white/70 font-mono text-[11px]">By Elvaris Capital</span>
+              <span className="text-white/70 font-mono text-[10.5px]">By Elvaris Capital</span>
             </div>
 
-            {/* Headline - Properly sized institutional heading */}
-            <h2 className="text-xl sm:text-2xl lg:text-[23px] xl:text-[25px] leading-snug font-light tracking-tight text-white">
+            {/* Headline - Editorial Institutional Heading */}
+            <h2 className="text-2xl sm:text-3xl lg:text-[28px] xl:text-[32px] leading-[1.18] font-light tracking-[-0.02em] text-white">
               <span>Institutional algorithmic trading.</span>{" "}
-              <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-[#a3e635]">
+              <span className="font-light text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-[#a3e635]">
                 Live terminal execution & verified trades.
               </span>
             </h2>
 
             {/* Description Narrative */}
-            <p className="text-xs sm:text-sm text-zinc-400 font-light leading-relaxed">
-              Experience the live strategy terminal from StratMarket. Automated Pine Script v5 & Python MT5 algorithms with visual position tool boxes, real-time signal dispatch, and zero curve-fitting.
+            <p className="text-xs sm:text-[13px] text-zinc-400 font-light leading-relaxed max-w-[480px]">
+              Direct access to production-grade Pine Script v5 and Python MT5 quantitative models. Audited tick-by-tick with visual position tool boxes, real-time signal dispatch, and zero curve-fitting.
             </p>
 
-            {/* Strategy Model Selector */}
+            {/* Strategy Model Selector - Sleek Segmented Switcher */}
             <div className="space-y-1 pt-0.5">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-semibold block">
-                Active Trading Model
-              </span>
-              <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                {Object.values(STRATEGIES).map((s) => (
-                  <button
-                    key={s.id}
-                    type="button"
-                    onClick={() => setSelectedStrategy(s.id)}
-                    className={`px-2.5 py-1 rounded-lg text-xs font-mono transition-all ${
-                      selectedStrategy === s.id
-                        ? "bg-[#a3e635] text-black font-bold shadow-[0_0_12px_rgba(163,230,53,0.3)] scale-[1.02]"
-                        : "bg-white/[0.04] border border-white/10 text-zinc-400 hover:text-white hover:border-white/20"
-                    }`}
-                  >
-                    {s.id} · {s.name} ({s.badge})
-                  </button>
-                ))}
+              <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider">
+                <span className="text-zinc-500 font-semibold">Audited Strategy Model</span>
+                <span className="text-[#a3e635] font-semibold flex items-center gap-1.5">
+                  <span className="inline-block size-1.5 rounded-full bg-[#a3e635] animate-pulse" />
+                  Live In Production
+                </span>
+              </div>
+              <div className="grid grid-cols-3 gap-1.5 p-1 rounded-xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-md">
+                {Object.values(STRATEGIES).map((s) => {
+                  const active = selectedStrategy === s.id;
+                  return (
+                    <button
+                      key={s.id}
+                      type="button"
+                      onClick={() => setSelectedStrategy(s.id)}
+                      className={`py-2 px-2 rounded-lg text-xs font-mono transition-all text-center flex flex-col items-center justify-center gap-0.5 cursor-pointer ${
+                        active
+                          ? "bg-[#181b22] text-white border border-white/15 shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
+                          : "text-zinc-400 hover:text-white hover:bg-white/[0.03] border border-transparent"
+                      }`}
+                    >
+                      <span className={`font-bold tracking-wide ${active ? "text-[#a3e635]" : "text-zinc-300"}`}>{s.id}</span>
+                      <span className="text-[10px] text-zinc-500 truncate max-w-full">{s.name}</span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
-            {/* Audited HUD Strategy Metrics (2x2 Grid) */}
-            <div className="grid grid-cols-2 gap-2 pt-0.5">
-              <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-2.5 font-mono">
-                <span className="text-[9.5px] text-zinc-500 uppercase tracking-widest block mb-0.5">Peak Win Rate</span>
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-lg sm:text-xl font-bold text-[#a3e635]">{strat.winRate}</span>
-                  <span className="text-[9.5px] text-zinc-500">Audited</span>
+            {/* Audited HUD Strategy Metrics (4-Column Telemetry Bar) */}
+            <div className="grid grid-cols-4 gap-2 pt-0.5">
+              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-2.5 font-mono">
+                <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">Win Rate</span>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-base sm:text-lg font-bold text-[#a3e635]">{strat.winRate}</span>
                 </div>
+                <span className="text-[8.5px] text-zinc-500 block mt-0.5">Audited</span>
               </div>
 
-              <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-2.5 font-mono">
-                <span className="text-[9.5px] text-zinc-500 uppercase tracking-widest block mb-0.5">Profit Factor</span>
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-lg sm:text-xl font-bold text-white">{strat.profitFactor}</span>
-                  <span className="text-[9.5px] text-zinc-500">Gross W/L</span>
+              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-2.5 font-mono">
+                <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">Profit Factor</span>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-base sm:text-lg font-bold text-white">{strat.profitFactor}</span>
                 </div>
+                <span className="text-[8.5px] text-zinc-500 block mt-0.5">Gross W/L</span>
               </div>
 
-              <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-2.5 font-mono">
-                <span className="text-[9.5px] text-zinc-500 uppercase tracking-widest block mb-0.5">Max Drawdown</span>
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-lg sm:text-xl font-bold text-emerald-400">{strat.maxDrawdown}</span>
-                  <span className="text-[9.5px] text-zinc-500">Holdout</span>
+              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-2.5 font-mono">
+                <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">Max DD</span>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-base sm:text-lg font-bold text-emerald-400">{strat.maxDrawdown}</span>
                 </div>
+                <span className="text-[8.5px] text-zinc-500 block mt-0.5">Holdout</span>
               </div>
 
-              <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-2.5 font-mono">
-                <span className="text-[9.5px] text-zinc-500 uppercase tracking-widest block mb-0.5">Sharpe Ratio</span>
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-lg sm:text-xl font-bold text-white">{strat.sharpe}</span>
-                  <span className="text-[9.5px] text-zinc-500">Annual</span>
+              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-2.5 font-mono">
+                <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">Sharpe</span>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-base sm:text-lg font-bold text-white">{strat.sharpe}</span>
                 </div>
+                <span className="text-[8.5px] text-zinc-500 block mt-0.5">Annual</span>
               </div>
             </div>
 
@@ -418,7 +426,7 @@ export function StratMarketProduct() {
                 href={`https://strat-market-chi.vercel.app/chart/${strat.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center gap-2 rounded-full bg-[#a3e635] px-5 py-2.5 text-xs font-mono font-bold uppercase tracking-wider text-black transition-all duration-300 hover:bg-[#bef264] hover:shadow-[0_0_20px_rgba(163,230,53,0.4)] active:scale-95"
+                className="group relative inline-flex items-center gap-2 rounded-lg bg-[#a3e635] px-5 py-2.5 text-xs font-mono font-bold uppercase tracking-wider text-black transition-all duration-300 hover:bg-[#bef264] hover:shadow-[0_0_25px_rgba(163,230,53,0.35)] active:scale-95 cursor-pointer"
               >
                 <span>Open Live Terminal</span>
                 <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -428,10 +436,10 @@ export function StratMarketProduct() {
                 href="https://strat-market-chi.vercel.app/market"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.04] px-5 py-2.5 text-xs font-mono font-medium uppercase tracking-wider text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 backdrop-blur-md"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/[0.03] px-5 py-2.5 text-xs font-mono font-medium uppercase tracking-wider text-zinc-300 hover:text-white hover:border-white/30 hover:bg-white/[0.06] transition-all duration-300 backdrop-blur-md cursor-pointer"
               >
                 <span>Browse Catalog</span>
-                <ChevronRight className="size-3.5 text-white/50" />
+                <ChevronRight className="size-3.5 text-white/40" />
               </a>
             </div>
 
@@ -439,142 +447,128 @@ export function StratMarketProduct() {
 
           {/* RIGHT SIDE: The Live Chart Terminal */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl border border-[#27272a] bg-[#131722] overflow-hidden shadow-[0_25px_80px_-20px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.06)]">
-          
-          {/* Top Brand Toolbar */}
-          <div className="h-[42px] sm:h-[46px] bg-[#09090b] border-b border-[#1f1f23] px-3 sm:px-4 flex items-center justify-between text-xs select-none">
+            <div className="relative group">
+              {/* Subtle ambient glow behind terminal */}
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#a3e635]/15 via-emerald-500/10 to-[#a3e635]/15 blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none" />
+
+              <div className="relative rounded-2xl border border-white/[0.12] bg-[#0c0d14] overflow-hidden shadow-[0_25px_70px_-15px_rgba(0,0,0,0.95),0_0_40px_rgba(163,230,53,0.06),inset_0_1px_0_rgba(255,255,255,0.12)]">
             
-            {/* Left toolbar items */}
-            <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar py-1">
-              {/* Back to StratMarket Link */}
-              <a
-                href="https://strat-market-chi.vercel.app/market"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white/70 hover:text-white px-2 py-1 rounded hover:bg-white/5 transition-colors font-semibold"
-                title="StratMarket by Elvaris Capital"
-              >
-                {/* StratMarket Polygon Logo */}
-                <svg width="18" height="18" viewBox="0 0 100 118" fill="#ffffff" className="shrink-0" aria-label="StratMarket Logo">
-                  <path d="M 99.32 12.66 L 74.40 0.68 L 68.26 0.00 L 2.05 38.65 L 0.00 43.10 L 0.00 60.54 L 1.37 63.62 L 3.41 65.67 L 30.03 79.01 L 47.78 68.75 L 23.55 57.80 L 22.18 56.09 Z" />
-                  <path d="M 99.32 59.17 L 96.59 55.41 L 66.55 41.04 L 43.34 54.38 L 70.99 68.06 L 3.07 104.66 L 28.33 116.97 L 35.15 116.97 L 97.27 82.43 L 99.66 77.64 Z" />
-                </svg>
-                <span className="text-white font-bold tracking-tight text-sm">StratMarket</span>
-                <span className="hidden md:inline text-[10.5px] text-zinc-400 font-medium">by Elvaris Capital</span>
-              </a>
+                {/* Pro Terminal Top Header Bar */}
+                <div className="h-[44px] bg-[#0e1017] border-b border-[#20242f] px-3 sm:px-4 flex items-center justify-between text-xs select-none">
+                  
+                  {/* Left items: Window Dots + Logo + Symbol */}
+                  <div className="flex items-center gap-2.5 sm:gap-3">
+                    {/* Mac Window Dots */}
+                    <div className="hidden sm:flex items-center gap-1.5">
+                      <span className="size-2.5 rounded-full bg-[#ff5f56]/70 border border-[#ff5f56]/90" />
+                      <span className="size-2.5 rounded-full bg-[#ffbd2e]/70 border border-[#ffbd2e]/90" />
+                      <span className="size-2.5 rounded-full bg-[#27c93f]/70 border border-[#27c93f]/90" />
+                    </div>
 
-              <div className="w-[1px] h-4 bg-zinc-800 shrink-0" />
+                    <div className="hidden sm:block w-[1px] h-3.5 bg-zinc-800" />
 
-              {/* Strategy Selector Dropdown */}
-              <div className="relative shrink-0">
-                <select
-                  value={selectedStrategy}
-                  onChange={(e) => setSelectedStrategy(e.target.value)}
-                  className="bg-white/5 border border-white/15 text-white text-xs font-semibold rounded-md px-2.5 py-1.5 pr-7 appearance-none cursor-pointer hover:border-white/30 focus:outline-none focus:ring-1 focus:ring-[#a3e635] transition-all"
-                  title="Switch Active Trading Model"
-                >
-                  <option value="PS-04" className="bg-[#131722] text-white">PS-04 · Elite (80.7% WR)</option>
-                  <option value="PS-01" className="bg-[#131722] text-white">PS-01 · Grandmaster (82.6% WR)</option>
-                  <option value="PS-02" className="bg-[#131722] text-white">PS-02 · Apex (88.5% WR)</option>
-                </select>
-                <div className="pointer-events-none absolute inset-y-0 right-2 flex items-center text-white/50 text-[10px]">
-                  ▼
+                    {/* StratMarket Brand */}
+                    <a
+                      href="https://strat-market-chi.vercel.app/market"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-white hover:text-[#a3e635] transition-colors"
+                      title="StratMarket by Elvaris Capital"
+                    >
+                      <svg width="17" height="17" viewBox="0 0 100 118" fill="#ffffff" className="shrink-0" aria-label="StratMarket Logo">
+                        <path d="M 99.32 12.66 L 74.40 0.68 L 68.26 0.00 L 2.05 38.65 L 0.00 43.10 L 0.00 60.54 L 1.37 63.62 L 3.41 65.67 L 30.03 79.01 L 47.78 68.75 L 23.55 57.80 L 22.18 56.09 Z" />
+                        <path d="M 99.32 59.17 L 96.59 55.41 L 66.55 41.04 L 43.34 54.38 L 70.99 68.06 L 3.07 104.66 L 28.33 116.97 L 35.15 116.97 L 97.27 82.43 L 99.66 77.64 Z" />
+                      </svg>
+                      <span className="text-white font-bold tracking-tight text-xs font-mono">StratMarket</span>
+                    </a>
+
+                    <div className="w-[1px] h-3.5 bg-zinc-800" />
+
+                    {/* Symbol & Timeframe */}
+                    <div className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-white/[0.05] border border-white/10 font-mono text-[11px] text-white">
+                      <span className="font-bold text-white">{strat.instrument}</span>
+                      <span className="text-zinc-500">·</span>
+                      <span className="text-[#a3e635] font-semibold">{strat.timeframe}</span>
+                    </div>
+
+                    {/* Active Model Pill */}
+                    <div className="hidden md:flex items-center gap-1.5 text-[11px] font-mono text-zinc-400">
+                      <span className="text-zinc-600">//</span>
+                      <span className="text-white font-semibold">{strat.id}</span>
+                      <span className="text-[#a3e635]">({strat.badge})</span>
+                    </div>
+                  </div>
+
+                  {/* Right toolbar items */}
+                  <div className="flex items-center gap-2 font-mono text-[11px]">
+                    {/* Position Boxes Toggle */}
+                    <button
+                      type="button"
+                      onClick={() => setShowBoxes(!showBoxes)}
+                      className={`flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-mono transition-all cursor-pointer ${
+                        showBoxes 
+                          ? "bg-[#a3e635]/15 border border-[#a3e635]/40 text-[#a3e635] shadow-[0_0_12px_rgba(163,230,53,0.2)]" 
+                          : "bg-white/5 border border-white/10 text-zinc-400 hover:text-white"
+                      }`}
+                      title="Toggle Visual Long/Short Position Tool Boxes on Chart"
+                    >
+                      <span className={`size-1.5 rounded-full ${showBoxes ? "bg-[#a3e635] shadow-[0_0_6px_#a3e635]" : "bg-zinc-600"}`} />
+                      <span>Position Boxes</span>
+                    </button>
+
+                    {/* Live Feed Status Indicator */}
+                    <div className="hidden sm:flex items-center gap-1.5 px-2 py-1 rounded bg-white/[0.04] border border-white/10 text-[10.5px]">
+                      <span className="relative flex h-1.5 w-1.5">
+                        <span className={`animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a3e635] ${isLiveStreaming ? "opacity-75" : "opacity-0"}`}></span>
+                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#a3e635]"></span>
+                      </span>
+                      <span className="text-[#a3e635] font-semibold">LMAX FIX 4.4</span>
+                    </div>
+
+                    {/* Strategy Details Drawer Toggle */}
+                    <button
+                      type="button"
+                      onClick={() => setPanelOpen(!panelOpen)}
+                      className={`flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] transition-colors cursor-pointer ${
+                        panelOpen ? "bg-[#a3e635] text-black font-bold" : "bg-white/5 border border-white/10 text-white hover:bg-white/10"
+                      }`}
+                      title="Toggle Strategy Details & Live VPS Signals"
+                    >
+                      <Sliders className="size-3" />
+                      <span className="hidden sm:inline">Strategy</span>
+                    </button>
+                  </div>
                 </div>
-              </div>
 
-              {/* Symbol & Timeframe */}
-              <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/5 border border-white/10 font-mono text-[11px] text-white shrink-0">
-                <span className="font-bold text-white">{strat.instrument}</span>
-                <span className="text-zinc-500">·</span>
-                <span className="text-zinc-400">{strat.timeframe}</span>
-              </div>
-            </div>
+                {/* Sub-header Bar (TradingView style indicators + tools) */}
+                <div className="h-[30px] bg-[#131722] border-b border-[#232733] px-3 sm:px-4 flex items-center justify-between text-zinc-400 text-[11px] font-mono select-none">
+                  <div className="flex items-center gap-2.5">
+                    <div className="flex items-center gap-1.5 text-zinc-300 hover:text-white cursor-pointer">
+                      <CandlestickChart className="size-3.5 text-zinc-400" />
+                      <span>Candles</span>
+                    </div>
+                    <div className="w-[1px] h-3 bg-zinc-800" />
+                    <span className="hover:text-white cursor-pointer text-zinc-400 hidden sm:inline">fx Indicators</span>
+                    <div className="w-[1px] h-3 bg-zinc-800 hidden sm:block" />
+                    <div className="hidden sm:flex items-center gap-2 text-zinc-500">
+                      <Undo2 className="size-3 hover:text-zinc-300 cursor-pointer" />
+                      <Redo2 className="size-3 hover:text-zinc-300 cursor-pointer" />
+                    </div>
+                  </div>
 
-            {/* Right toolbar items */}
-            <div className="flex items-center gap-2 shrink-0">
-              
-              {/* Position Boxes Toggle */}
-              <button
-                type="button"
-                onClick={() => setShowBoxes(!showBoxes)}
-                className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-[11px] font-mono font-medium transition-all ${
-                  showBoxes 
-                    ? "bg-[#a3e635]/15 border border-[#a3e635]/40 text-[#a3e635] shadow-[0_0_12px_rgba(163,230,53,0.2)]" 
-                    : "bg-white/5 border border-white/10 text-zinc-400 hover:text-white"
-                }`}
-                title="Toggle Visual Long/Short Position Tool Boxes on Chart"
-              >
-                <span className={`size-1.5 rounded-full ${showBoxes ? "bg-[#a3e635] shadow-[0_0_6px_#a3e635]" : "bg-zinc-600"}`} />
-                <span>Position Boxes</span>
-              </button>
-
-              {/* Alerts Button */}
-              <button
-                type="button"
-                onClick={() => setAlertsOn(!alertsOn)}
-                className={`hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-[11px] font-mono font-medium border transition-colors ${
-                  alertsOn ? "bg-white/10 border-white/20 text-white" : "bg-white/5 border-white/10 text-zinc-500"
-                }`}
-              >
-                <span>{alertsOn ? "Alerts ON" : "Alerts OFF"}</span>
-              </button>
-
-              {/* Live Feed Status Indicator */}
-              <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-white/[0.04] border border-white/10 text-[11px] font-mono">
-                <span className="relative flex h-1.5 w-1.5">
-                  <span className={`animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a3e635] ${isLiveStreaming ? "opacity-75" : "opacity-0"}`}></span>
-                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#a3e635]"></span>
-                </span>
-                <span className="text-[#a3e635] font-semibold hidden sm:inline">Live Feed</span>
-              </div>
-
-              {/* Strategy Details Drawer Toggle */}
-              <button
-                type="button"
-                onClick={() => setPanelOpen(!panelOpen)}
-                className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-[11px] font-mono transition-colors ${
-                  panelOpen ? "bg-[#a3e635] text-black font-bold" : "bg-white/5 border border-white/10 text-white hover:bg-white/10"
-                }`}
-                title="Toggle Strategy Details & Live VPS Signals"
-              >
-                <Sliders className="size-3.5" />
-                <span className="hidden sm:inline">Strategy</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Sub-header Bar (TradingView style symbol + timeframe + indicators) */}
-          <div className="h-[32px] sm:h-[34px] bg-[#131722] border-b border-[#2a2e39] px-3 sm:px-4 flex items-center justify-between text-zinc-400 text-xs font-mono select-none">
-            <div className="flex items-center gap-3">
-              <span className="text-white font-bold tracking-wide">{strat.instrument}</span>
-              <div className="flex items-center gap-1 text-zinc-400 hover:text-white cursor-pointer">
-                <span>15m</span>
-                <span className="text-[9px]">▼</span>
-              </div>
-              <div className="w-[1px] h-3.5 bg-zinc-800" />
-              <div className="flex items-center gap-2">
-                <button type="button" title="Candles" className="p-0 bg-transparent border-0 flex items-center">
-                  <CandlestickChart className="size-4 text-zinc-400 hover:text-white cursor-pointer" />
-                </button>
-                <span className="hover:text-white cursor-pointer hidden sm:inline">fx Indicators</span>
-              </div>
-              <div className="w-[1px] h-3.5 bg-zinc-800 hidden sm:block" />
-              <div className="hidden sm:flex items-center gap-2 text-zinc-500">
-                <Undo2 className="size-3.5 hover:text-zinc-300 cursor-pointer" />
-                <Redo2 className="size-3.5 hover:text-zinc-300 cursor-pointer" />
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 text-zinc-500">
-              <span className="hidden md:inline text-[10px] text-zinc-400">Institutional Feed: LMAX · FIX 4.4</span>
-              <button type="button" title="Take Screenshot" className="p-0 bg-transparent border-0 flex items-center">
-                <Camera className="size-3.5 hover:text-zinc-300 cursor-pointer" />
-              </button>
-              <button type="button" title="Fullscreen" className="p-0 bg-transparent border-0 flex items-center">
-                <Maximize2 className="size-3.5 hover:text-zinc-300 cursor-pointer" />
-              </button>
-            </div>
-          </div>
+                  <div className="flex items-center gap-2.5 text-zinc-500 text-[10px]">
+                    <span className="hidden md:inline">Continuous Tick Stream</span>
+                    <a
+                      href={`https://strat-market-chi.vercel.app/chart/${strat.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-zinc-400 hover:text-white flex items-center gap-1 transition-colors"
+                      title="Open full chart terminal"
+                    >
+                      <Maximize2 className="size-3" />
+                    </a>
+                  </div>
+                </div>
 
           {/* Main Chart Area with Left Tools + SVG Canvas + Optional Side Panel */}
           <div className="relative flex w-full h-[430px] sm:h-[470px] lg:h-[490px] bg-[#131722]">
@@ -736,16 +730,27 @@ export function StratMarketProduct() {
                       />
 
                       {/* 3. ENTRY PIN & CALLOUT */}
-                      {/* Small triangle pin at entry */}
                       <path
                         d={`M${chart.boxX1},${chart.entryY} l-5,6 h10 z`}
                         fill="#ffffff"
                       />
+                      <rect
+                        x={chart.boxX1 + 6}
+                        y={chart.entryY - 8}
+                        width="114"
+                        height="18"
+                        rx="3"
+                        fill="#0c0e14"
+                        fillOpacity="0.9"
+                        stroke="#ffffff"
+                        strokeWidth="0.6"
+                        strokeOpacity="0.3"
+                      />
                       <text
-                        x={chart.boxX1 + 10}
+                        x={chart.boxX1 + 12}
                         y={chart.entryY + 4}
                         fill="#ffffff"
-                        fontSize="11"
+                        fontSize="10"
                         fontFamily="ui-monospace, Menlo, monospace"
                         fontWeight="700"
                       >
@@ -762,11 +767,23 @@ export function StratMarketProduct() {
                         strokeWidth="1.2"
                         strokeDasharray="4 3"
                       />
+                      <rect
+                        x={chart.boxX1 + 6}
+                        y={chart.tpY - 18}
+                        width="148"
+                        height="18"
+                        rx="3"
+                        fill="#0c0e14"
+                        fillOpacity="0.9"
+                        stroke="#a3e635"
+                        strokeWidth="0.8"
+                        strokeOpacity="0.6"
+                      />
                       <text
-                        x={chart.boxX1 + 10}
+                        x={chart.boxX1 + 12}
                         y={chart.tpY - 5}
                         fill="#a3e635"
-                        fontSize="11"
+                        fontSize="10"
                         fontFamily="ui-monospace, Menlo, monospace"
                         fontWeight="700"
                       >
@@ -783,9 +800,21 @@ export function StratMarketProduct() {
                         strokeWidth="1.2"
                         strokeDasharray="4 3"
                       />
+                      <rect
+                        x={chart.boxX1 + 6}
+                        y={chart.slY + 2}
+                        width="100"
+                        height="18"
+                        rx="3"
+                        fill="#0c0e14"
+                        fillOpacity="0.9"
+                        stroke="#ef4444"
+                        strokeWidth="0.8"
+                        strokeOpacity="0.6"
+                      />
                       <text
-                        x={chart.boxX1 + 10}
-                        y={chart.slY + 12}
+                        x={chart.boxX1 + 12}
+                        y={chart.slY + 14}
                         fill="#ef4444"
                         fontSize="10"
                         fontFamily="ui-monospace, Menlo, monospace"
@@ -953,9 +982,9 @@ export function StratMarketProduct() {
               <span className="hidden sm:inline text-zinc-600">|</span>
               <span className="hidden sm:inline text-zinc-400">% log auto</span>
             </div>
-          </div>
-        </div>
-
+          </div>{/* Close bottom status bar */}
+              </div>{/* Close relative rounded-2xl */}
+            </div>{/* Close relative group */}
           </div>{/* Close lg:col-span-7 */}
         </div>{/* Close grid-cols-12 */}
 
