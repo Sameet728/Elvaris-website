@@ -294,7 +294,7 @@ export default function HomePage() {
         <h2>Validated research in live markets.</h2>
         <p>Quantitative models that survive our 6-stage validation pipeline are deployed to our institutional strategy marketplace with real-time execution signals and tick-level performance verification.</p>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '24px' }}>
-          <a className="btn" href="#stratmarket" style={{ borderColor: '#a3e635', color: '#a3e635' }}>Back to StratMarket Chart ↑</a>
+          <a className="btn" href="#stratmarket" style={{ borderColor: '#CBB894', color: '#CBB894' }}>Back to StratMarket Chart ↑</a>
           <a className="btn" href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer">Launch Marketplace Platform ↗</a>
         </div>
       </section>
