@@ -270,11 +270,12 @@ export default function HomePage() {
         <Navbar />
       </div>
 
-      {/* STRATMARKET PROMOTION & TERMINAL CHART AT THE VERY TOP */}
+      {/* STRATMARKET PROMOTION & LIVE CHART AT THE VERY TOP */}
       <div className="relative z-20">
         <StratMarketProduct />
       </div>
 
+      {/* UNDERLYING QUANTITATIVE RESEARCH SYSTEM */}
       <main id="track" className="relative">
         <div id="research-pipeline" className="absolute -top-20" />
         <div className="stick" id="stick">
@@ -288,12 +289,12 @@ export default function HomePage() {
         </div>
       </main>
 
-      <section className="end" id="research-output">
+      <section className="end">
         <div className="lg" style={{ color: 'var(--gold)', marginBottom: '22px', font: '400 10px var(--mono)', letterSpacing: '.3em' }}>RESEARCH OUTPUT / DEPLOYED PLATFORMS</div>
         <h2>Validated research in live markets.</h2>
         <p>Quantitative models that survive our 6-stage validation pipeline are deployed to our institutional strategy marketplace with real-time execution signals and tick-level performance verification.</p>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '24px' }}>
-          <a className="btn" href="#stratmarket" style={{ borderColor: '#a3e635', color: '#a3e635' }}>Back to Terminal Chart ↑</a>
+          <a className="btn" href="#stratmarket" style={{ borderColor: '#a3e635', color: '#a3e635' }}>Back to StratMarket Chart ↑</a>
           <a className="btn" href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer">Launch Marketplace Platform ↗</a>
         </div>
       </section>

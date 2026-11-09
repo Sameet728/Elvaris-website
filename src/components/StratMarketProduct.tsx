@@ -315,8 +315,59 @@ export function StratMarketProduct() {
 
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6">
 
+        {/* Promo Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10">
+          <div className="space-y-4 max-w-3xl">
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-[#a3e635]/40 bg-[#a3e635]/10 px-4 py-1.5 shadow-[0_0_20px_rgba(163,230,53,0.15)]">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a3e635] opacity-80"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a3e635]"></span>
+              </span>
+              <span className="font-mono text-xs font-semibold tracking-wider uppercase text-[#a3e635]">
+                StratMarket Launch · Product Showcase
+              </span>
+              <span className="text-white/20">|</span>
+              <span className="text-white/70 font-mono text-xs">By Elvaris Capital</span>
+            </div>
+
+            <h2 className="text-[clamp(32px,4vw,56px)] leading-[1.05] font-light tracking-tight text-white">
+              Institutional algorithmic trading.<br />
+              <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-[#a3e635]">
+                Live terminal execution & verified trades.
+              </span>
+            </h2>
+
+            <p className="text-[16px] text-white/50 leading-relaxed max-w-2xl">
+              Experience the live strategy terminal from <strong>StratMarket</strong> (<a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-[#a3e635] underline underline-offset-4 hover:text-[#bef264]">strat-market-chi.vercel.app</a>). Discover institutional Pine Script v5 & Python MT5 algorithms with visual position boxes, real-time signal dispatch, and zero curve-fitting.
+            </p>
+          </div>
+
+          {/* Quick CTA Actions */}
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <a
+              href="https://strat-market-chi.vercel.app/chart/PS-04"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-flex items-center gap-2.5 rounded-full bg-[#a3e635] px-6 py-3 text-xs font-mono font-bold uppercase tracking-wider text-black transition-all duration-300 hover:bg-[#bef264] hover:shadow-[0_0_35px_rgba(163,230,53,0.4)] active:scale-95"
+            >
+              <span>Open Live Terminal</span>
+              <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+
+            <a
+              href="https://strat-market-chi.vercel.app/market"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-xs font-mono font-medium uppercase tracking-wider text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 backdrop-blur-md"
+            >
+              <span>Browse Catalog</span>
+              <ChevronRight className="size-4 text-white/50" />
+            </a>
+          </div>
+        </div>
+
         {/* ========================================================================= */}
-        {/* THE TERMINAL INTERFACE (MATCHING SCREENSHOT) — FIRST TO BE SEEN           */}
+        {/* THE TERMINAL INTERFACE (MATCHING SCREENSHOT)                              */}
         {/* ========================================================================= */}
         <div className="rounded-2xl border border-[#27272a] bg-[#131722] overflow-hidden shadow-[0_30px_100px_-20px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.05)]">
           
@@ -835,59 +886,6 @@ export function StratMarketProduct() {
           </div>
         </div>
 
-        {/* ========================================================================= */}
-        {/* WRITTEN DETAILS SHIFTED DIRECTLY BELOW THE CHART (LIVE PRODUCT DEPLOYMENT)*/}
-        {/* ========================================================================= */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mt-12 mb-10">
-          <div className="space-y-4 max-w-3xl">
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-[#a3e635]/40 bg-[#a3e635]/10 px-4 py-1.5 shadow-[0_0_20px_rgba(163,230,53,0.15)]">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a3e635] opacity-80"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a3e635]"></span>
-              </span>
-              <span className="font-mono text-xs font-semibold tracking-wider uppercase text-[#a3e635]">
-                Live Product Deployment
-              </span>
-              <span className="text-white/20">|</span>
-              <span className="text-white/70 font-mono text-xs">StratMarket by Elvaris Capital</span>
-            </div>
-
-            <h2 className="text-[clamp(32px,4vw,56px)] leading-[1.05] font-light tracking-tight text-white">
-              Institutional algorithmic trading.<br />
-              <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-[#a3e635]">
-                Live terminal execution & verified trades.
-              </span>
-            </h2>
-
-            <p className="text-[16px] text-white/50 leading-relaxed max-w-2xl">
-              Experience the live strategy terminal from <strong>StratMarket</strong> (<a href="https://strat-market-chi.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-[#a3e635] underline underline-offset-4 hover:text-[#bef264]">strat-market-chi.vercel.app</a>). Discover institutional Pine Script v5 & Python MT5 algorithms with visual position boxes, real-time signal dispatch, and zero curve-fitting.
-            </p>
-          </div>
-
-          {/* Quick CTA Actions */}
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <a
-              href="https://strat-market-chi.vercel.app/chart/PS-04"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-2.5 rounded-full bg-[#a3e635] px-6 py-3 text-xs font-mono font-bold uppercase tracking-wider text-black transition-all duration-300 hover:bg-[#bef264] hover:shadow-[0_0_35px_rgba(163,230,53,0.4)] active:scale-95"
-            >
-              <span>Open Live Terminal</span>
-              <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-
-            <a
-              href="https://strat-market-chi.vercel.app/market"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-xs font-mono font-medium uppercase tracking-wider text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 backdrop-blur-md"
-            >
-              <span>Browse Catalog</span>
-              <ChevronRight className="size-4 text-white/50" />
-            </a>
-          </div>
-        </div>
-
         {/* Institutional Performance Stats Strip */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
           <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 font-mono">
@@ -960,7 +958,7 @@ export function StratMarketProduct() {
         <div className="mt-10 rounded-2xl border border-[#a3e635]/25 bg-gradient-to-r from-[#a3e635]/[0.07] via-white/[0.01] to-transparent p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <div className="text-xs font-mono uppercase tracking-widest text-[#a3e635] font-semibold mb-1">
-              Verified Strategy Platform
+              Live Product Deployment
             </div>
             <h4 className="text-xl sm:text-2xl font-light text-white">
               Explore the complete StratMarket quantitative strategy catalog.
@@ -978,6 +976,17 @@ export function StratMarketProduct() {
           >
             <span>Visit strat-market-chi.vercel.app</span>
             <ExternalLink className="size-4 transition-transform group-hover:scale-110" />
+          </a>
+        </div>
+
+        {/* Scroll cue down to Quantitative Research System */}
+        <div className="mt-12 text-center">
+          <a
+            href="#research-pipeline"
+            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-zinc-500 hover:text-white transition-colors py-2 px-4 rounded-full border border-white/5 hover:border-white/20 bg-white/[0.02]"
+          >
+            <span>Explore Elvaris Quantitative Research System & Pipeline</span>
+            <span className="text-[#a3e635]">↓</span>
           </a>
         </div>
 
