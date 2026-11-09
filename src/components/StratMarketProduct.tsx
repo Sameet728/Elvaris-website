@@ -326,44 +326,39 @@ export function StratMarketProduct() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-center">
 
           {/* LEFT SIDE: The Written Work */}
-          <div className="lg:col-span-5 flex flex-col justify-center space-y-3 sm:space-y-3.5">
+          <div className="lg:col-span-5 flex flex-col justify-center space-y-4 sm:space-y-5">
             
             {/* Launch Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#a3e635]/35 bg-[#a3e635]/[0.08] px-3 py-1 shadow-[0_0_20px_rgba(163,230,53,0.15)] w-fit backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#a3e635]/35 bg-[#a3e635]/[0.08] px-3.5 py-1.5 shadow-[0_0_20px_rgba(163,230,53,0.15)] w-fit backdrop-blur-md">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a3e635] opacity-80"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a3e635]"></span>
               </span>
-              <span className="font-mono text-[10.5px] font-semibold tracking-wider uppercase text-[#a3e635]">
+              <span className="font-mono text-[11px] font-semibold tracking-wider uppercase text-[#a3e635]">
                 StratMarket Launch // Product Showcase
               </span>
               <span className="text-white/20">|</span>
-              <span className="text-white/70 font-mono text-[10.5px]">By Elvaris Capital</span>
+              <span className="text-white/70 font-mono text-[11px]">By Elvaris Capital</span>
             </div>
 
-            {/* Headline - Editorial Institutional Heading */}
-            <h2 className="text-2xl sm:text-3xl lg:text-[28px] xl:text-[32px] leading-[1.18] font-light tracking-[-0.02em] text-white">
+            {/* Headline - Bold Institutional Presence */}
+            <h2 className="text-3xl sm:text-4xl lg:text-[36px] xl:text-[42px] leading-[1.12] font-light tracking-tight text-white">
               <span>Institutional algorithmic trading.</span>{" "}
               <span className="font-light text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-[#a3e635]">
                 Live terminal execution & verified trades.
               </span>
             </h2>
 
-            {/* Description Narrative */}
-            <p className="text-xs sm:text-[13px] text-zinc-400 font-light leading-relaxed max-w-[480px]">
-              Direct access to production-grade Pine Script v5 and Python MT5 quantitative models. Audited tick-by-tick with visual position tool boxes, real-time signal dispatch, and zero curve-fitting.
-            </p>
-
             {/* Strategy Model Selector - Sleek Segmented Switcher */}
-            <div className="space-y-1 pt-0.5">
-              <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider">
-                <span className="text-zinc-500 font-semibold">Audited Strategy Model</span>
+            <div className="space-y-1.5 pt-1">
+              <div className="flex items-center justify-between text-[11px] font-mono uppercase tracking-wider">
+                <span className="text-zinc-400 font-semibold">Audited Strategy Model</span>
                 <span className="text-[#a3e635] font-semibold flex items-center gap-1.5">
                   <span className="inline-block size-1.5 rounded-full bg-[#a3e635] animate-pulse" />
                   Live In Production
                 </span>
               </div>
-              <div className="grid grid-cols-3 gap-1.5 p-1 rounded-xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-md">
+              <div className="grid grid-cols-3 gap-1.5 p-1.5 rounded-xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-md">
                 {Object.values(STRATEGIES).map((s) => {
                   const active = selectedStrategy === s.id;
                   return (
@@ -371,14 +366,14 @@ export function StratMarketProduct() {
                       key={s.id}
                       type="button"
                       onClick={() => setSelectedStrategy(s.id)}
-                      className={`py-2 px-2 rounded-lg text-xs font-mono transition-all text-center flex flex-col items-center justify-center gap-0.5 cursor-pointer ${
+                      className={`py-2.5 px-2.5 rounded-lg text-xs font-mono transition-all text-center flex flex-col items-center justify-center gap-0.5 cursor-pointer ${
                         active
                           ? "bg-[#181b22] text-white border border-white/15 shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
                           : "text-zinc-400 hover:text-white hover:bg-white/[0.03] border border-transparent"
                       }`}
                     >
-                      <span className={`font-bold tracking-wide ${active ? "text-[#a3e635]" : "text-zinc-300"}`}>{s.id}</span>
-                      <span className="text-[10px] text-zinc-500 truncate max-w-full">{s.name}</span>
+                      <span className={`font-bold text-xs sm:text-[13px] tracking-wide ${active ? "text-[#a3e635]" : "text-zinc-300"}`}>{s.id}</span>
+                      <span className="text-[10.5px] text-zinc-400 truncate max-w-full">{s.name}</span>
                     </button>
                   );
                 })}
@@ -386,57 +381,57 @@ export function StratMarketProduct() {
             </div>
 
             {/* Audited HUD Strategy Metrics (4-Column Telemetry Bar) */}
-            <div className="grid grid-cols-4 gap-2 pt-0.5">
-              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-2.5 font-mono">
-                <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">Win Rate</span>
+            <div className="grid grid-cols-4 gap-2 pt-1">
+              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-3 font-mono">
+                <span className="text-[10px] text-zinc-400 uppercase tracking-widest block mb-1">Win Rate</span>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-base sm:text-lg font-bold text-[#a3e635]">{strat.winRate}</span>
+                  <span className="text-lg sm:text-2xl font-bold text-[#a3e635]">{strat.winRate}</span>
                 </div>
-                <span className="text-[8.5px] text-zinc-500 block mt-0.5">Audited</span>
+                <span className="text-[9px] text-zinc-500 block mt-0.5">Audited</span>
               </div>
 
-              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-2.5 font-mono">
-                <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">Profit Factor</span>
+              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-3 font-mono">
+                <span className="text-[10px] text-zinc-400 uppercase tracking-widest block mb-1">Profit Factor</span>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-base sm:text-lg font-bold text-white">{strat.profitFactor}</span>
+                  <span className="text-lg sm:text-2xl font-bold text-white">{strat.profitFactor}</span>
                 </div>
-                <span className="text-[8.5px] text-zinc-500 block mt-0.5">Gross W/L</span>
+                <span className="text-[9px] text-zinc-500 block mt-0.5">Gross W/L</span>
               </div>
 
-              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-2.5 font-mono">
-                <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">Max DD</span>
+              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-3 font-mono">
+                <span className="text-[10px] text-zinc-400 uppercase tracking-widest block mb-1">Max DD</span>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-base sm:text-lg font-bold text-emerald-400">{strat.maxDrawdown}</span>
+                  <span className="text-lg sm:text-2xl font-bold text-emerald-400">{strat.maxDrawdown}</span>
                 </div>
-                <span className="text-[8.5px] text-zinc-500 block mt-0.5">Holdout</span>
+                <span className="text-[9px] text-zinc-500 block mt-0.5">Holdout</span>
               </div>
 
-              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-2.5 font-mono">
-                <span className="text-[9px] text-zinc-500 uppercase tracking-widest block mb-0.5">Sharpe</span>
+              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-3 font-mono">
+                <span className="text-[10px] text-zinc-400 uppercase tracking-widest block mb-1">Sharpe</span>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-base sm:text-lg font-bold text-white">{strat.sharpe}</span>
+                  <span className="text-lg sm:text-2xl font-bold text-white">{strat.sharpe}</span>
                 </div>
-                <span className="text-[8.5px] text-zinc-500 block mt-0.5">Annual</span>
+                <span className="text-[9px] text-zinc-500 block mt-0.5">Annual</span>
               </div>
             </div>
 
             {/* Quick CTA Actions */}
-            <div className="flex flex-wrap items-center gap-2.5 pt-1">
+            <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
                 href={`https://strat-market-chi.vercel.app/chart/${strat.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center gap-2 rounded-lg bg-[#a3e635] px-5 py-2.5 text-xs font-mono font-bold uppercase tracking-wider text-black transition-all duration-300 hover:bg-[#bef264] hover:shadow-[0_0_25px_rgba(163,230,53,0.35)] active:scale-95 cursor-pointer"
+                className="group relative inline-flex items-center gap-2 rounded-lg bg-[#a3e635] px-6 py-3 text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-black transition-all duration-300 hover:bg-[#bef264] hover:shadow-[0_0_25px_rgba(163,230,53,0.35)] active:scale-95 cursor-pointer"
               >
                 <span>Open Live Terminal</span>
-                <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
 
               <a
                 href="https://strat-market-chi.vercel.app/market"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/[0.03] px-5 py-2.5 text-xs font-mono font-medium uppercase tracking-wider text-zinc-300 hover:text-white hover:border-white/30 hover:bg-white/[0.06] transition-all duration-300 backdrop-blur-md cursor-pointer"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/[0.03] px-6 py-3 text-xs sm:text-sm font-mono font-medium uppercase tracking-wider text-zinc-300 hover:text-white hover:border-white/30 hover:bg-white/[0.06] transition-all duration-300 backdrop-blur-md cursor-pointer"
               >
                 <span>Browse Catalog</span>
                 <ChevronRight className="size-3.5 text-white/40" />
