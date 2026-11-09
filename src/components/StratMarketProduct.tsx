@@ -325,26 +325,29 @@ export function StratMarketProduct() {
         {/* 2-COLUMN SPLIT: LEFT WRITTEN WORK, RIGHT CHART TERMINAL (FITS IN A SINGLE FRAME) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-center">
 
-          {/* LEFT SIDE: The Written Work */}
-          <div className="lg:col-span-5 flex flex-col justify-center space-y-4 sm:space-y-5">
+          {/* LEFT SIDE: The Written Work - Highlighted with Ambient Spotlight & High-Contrast Typography */}
+          <div className="relative lg:col-span-5 flex flex-col justify-center space-y-4 sm:space-y-5">
+            
+            {/* Ambient Glow Spotlight behind Written Work */}
+            <div className="absolute -top-16 -left-12 w-[380px] h-[380px] bg-[radial-gradient(circle,rgba(163,230,53,0.14)_0%,rgba(52,211,153,0.06)_40%,transparent_70%)] blur-3xl pointer-events-none -z-10" />
             
             {/* Launch Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#a3e635]/35 bg-[#a3e635]/[0.08] px-3.5 py-1.5 shadow-[0_0_20px_rgba(163,230,53,0.15)] w-fit backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#a3e635]/50 bg-[#a3e635]/[0.12] px-3.5 py-1.5 shadow-[0_0_25px_rgba(163,230,53,0.22)] w-fit backdrop-blur-md">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a3e635] opacity-80"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a3e635]"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a3e635] opacity-90"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a3e635] shadow-[0_0_8px_#a3e635]"></span>
               </span>
-              <span className="font-mono text-[11px] font-semibold tracking-wider uppercase text-[#a3e635]">
+              <span className="font-mono text-[11px] font-bold tracking-wider uppercase text-[#a3e635]">
                 StratMarket Launch // Product Showcase
               </span>
-              <span className="text-white/20">|</span>
-              <span className="text-white/70 font-mono text-[11px]">By Elvaris Capital</span>
+              <span className="text-white/30">|</span>
+              <span className="text-white/80 font-mono text-[11px] font-medium">By Elvaris Capital</span>
             </div>
 
-            {/* Headline - Bold Institutional Presence */}
-            <h2 className="text-3xl sm:text-4xl lg:text-[36px] xl:text-[42px] leading-[1.12] font-light tracking-tight text-white">
-              <span>Institutional algorithmic trading.</span>{" "}
-              <span className="font-light text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-[#a3e635]">
+            {/* Headline - Highlighted Typography */}
+            <h2 className="text-3xl sm:text-4xl lg:text-[38px] xl:text-[44px] leading-[1.12] font-normal tracking-tight text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.9)]">
+              <span className="text-white font-medium">Institutional algorithmic trading.</span>{" "}
+              <span className="block font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#bef264] via-[#a3e635] to-[#4ade80] drop-shadow-[0_0_35px_rgba(163,230,53,0.45)]">
                 Live terminal execution & verified trades.
               </span>
             </h2>
@@ -352,13 +355,13 @@ export function StratMarketProduct() {
             {/* Strategy Model Selector - Sleek Segmented Switcher */}
             <div className="space-y-1.5 pt-1">
               <div className="flex items-center justify-between text-[11px] font-mono uppercase tracking-wider">
-                <span className="text-zinc-400 font-semibold">Audited Strategy Model</span>
-                <span className="text-[#a3e635] font-semibold flex items-center gap-1.5">
-                  <span className="inline-block size-1.5 rounded-full bg-[#a3e635] animate-pulse" />
+                <span className="text-zinc-300 font-semibold tracking-wide">Audited Strategy Model</span>
+                <span className="text-[#a3e635] font-semibold flex items-center gap-1.5 drop-shadow-[0_0_8px_rgba(163,230,53,0.4)]">
+                  <span className="inline-block size-1.5 rounded-full bg-[#a3e635] shadow-[0_0_6px_#a3e635] animate-pulse" />
                   Live In Production
                 </span>
               </div>
-              <div className="grid grid-cols-3 gap-1.5 p-1.5 rounded-xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-md">
+              <div className="grid grid-cols-3 gap-1.5 p-1.5 rounded-xl bg-[#090b10]/90 border border-white/[0.12] shadow-[0_4px_24px_rgba(0,0,0,0.65)] backdrop-blur-md">
                 {Object.values(STRATEGIES).map((s) => {
                   const active = selectedStrategy === s.id;
                   return (
@@ -368,50 +371,54 @@ export function StratMarketProduct() {
                       onClick={() => setSelectedStrategy(s.id)}
                       className={`py-2.5 px-2.5 rounded-lg text-xs font-mono transition-all text-center flex flex-col items-center justify-center gap-0.5 cursor-pointer ${
                         active
-                          ? "bg-[#181b22] text-white border border-white/15 shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
-                          : "text-zinc-400 hover:text-white hover:bg-white/[0.03] border border-transparent"
+                          ? "bg-[#161a24] text-white border border-[#a3e635]/60 shadow-[0_0_20px_rgba(163,230,53,0.22),inset_0_1px_0_rgba(255,255,255,0.15)]"
+                          : "text-zinc-400 hover:text-white hover:bg-white/[0.04] border border-transparent"
                       }`}
                     >
-                      <span className={`font-bold text-xs sm:text-[13px] tracking-wide ${active ? "text-[#a3e635]" : "text-zinc-300"}`}>{s.id}</span>
-                      <span className="text-[10.5px] text-zinc-400 truncate max-w-full">{s.name}</span>
+                      <span className={`font-bold text-xs sm:text-[13px] tracking-wide ${active ? "text-[#a3e635] drop-shadow-[0_0_8px_rgba(163,230,53,0.5)]" : "text-zinc-300"}`}>{s.id}</span>
+                      <span className="text-[10.5px] text-zinc-400 truncate max-w-full font-medium">{s.name}</span>
                     </button>
                   );
                 })}
               </div>
             </div>
 
-            {/* Audited HUD Strategy Metrics (4-Column Telemetry Bar) */}
-            <div className="grid grid-cols-4 gap-2 pt-1">
-              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-3 font-mono">
+            {/* Audited HUD Strategy Metrics - Highlighted Telemetry Cards */}
+            <div className="grid grid-cols-4 gap-2.5 pt-1">
+              <div className="relative rounded-xl border border-white/[0.14] hover:border-[#a3e635]/50 bg-gradient-to-b from-[#11131a]/95 to-[#08090d]/95 p-3 font-mono shadow-[0_4px_24px_rgba(0,0,0,0.65),inset_0_1px_0_rgba(255,255,255,0.09)] backdrop-blur-md transition-all duration-300 overflow-hidden group/metric">
+                <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#a3e635]/60 to-transparent" />
                 <span className="text-[10px] text-zinc-400 uppercase tracking-widest block mb-1">Win Rate</span>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-lg sm:text-2xl font-bold text-[#a3e635]">{strat.winRate}</span>
+                  <span className="text-xl sm:text-2xl font-bold text-[#a3e635] drop-shadow-[0_0_14px_rgba(163,230,53,0.55)]">{strat.winRate}</span>
                 </div>
-                <span className="text-[9px] text-zinc-500 block mt-0.5">Audited</span>
+                <span className="text-[9.5px] text-[#a3e635]/85 font-medium block mt-0.5">Audited</span>
               </div>
 
-              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-3 font-mono">
+              <div className="relative rounded-xl border border-white/[0.14] hover:border-white/30 bg-gradient-to-b from-[#11131a]/95 to-[#08090d]/95 p-3 font-mono shadow-[0_4px_24px_rgba(0,0,0,0.65),inset_0_1px_0_rgba(255,255,255,0.09)] backdrop-blur-md transition-all duration-300 overflow-hidden group/metric">
+                <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
                 <span className="text-[10px] text-zinc-400 uppercase tracking-widest block mb-1">Profit Factor</span>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-lg sm:text-2xl font-bold text-white">{strat.profitFactor}</span>
+                  <span className="text-xl sm:text-2xl font-bold text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.35)]">{strat.profitFactor}</span>
                 </div>
-                <span className="text-[9px] text-zinc-500 block mt-0.5">Gross W/L</span>
+                <span className="text-[9.5px] text-zinc-400 block mt-0.5">Gross W/L</span>
               </div>
 
-              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-3 font-mono">
+              <div className="relative rounded-xl border border-white/[0.14] hover:border-emerald-400/40 bg-gradient-to-b from-[#11131a]/95 to-[#08090d]/95 p-3 font-mono shadow-[0_4px_24px_rgba(0,0,0,0.65),inset_0_1px_0_rgba(255,255,255,0.09)] backdrop-blur-md transition-all duration-300 overflow-hidden group/metric">
+                <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent" />
                 <span className="text-[10px] text-zinc-400 uppercase tracking-widest block mb-1">Max DD</span>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-lg sm:text-2xl font-bold text-emerald-400">{strat.maxDrawdown}</span>
+                  <span className="text-xl sm:text-2xl font-bold text-emerald-400 drop-shadow-[0_0_14px_rgba(52,211,153,0.45)]">{strat.maxDrawdown}</span>
                 </div>
-                <span className="text-[9px] text-zinc-500 block mt-0.5">Holdout</span>
+                <span className="text-[9.5px] text-emerald-400/85 font-medium block mt-0.5">Holdout</span>
               </div>
 
-              <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent p-3 font-mono">
+              <div className="relative rounded-xl border border-white/[0.14] hover:border-white/30 bg-gradient-to-b from-[#11131a]/95 to-[#08090d]/95 p-3 font-mono shadow-[0_4px_24px_rgba(0,0,0,0.65),inset_0_1px_0_rgba(255,255,255,0.09)] backdrop-blur-md transition-all duration-300 overflow-hidden group/metric">
+                <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
                 <span className="text-[10px] text-zinc-400 uppercase tracking-widest block mb-1">Sharpe</span>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-lg sm:text-2xl font-bold text-white">{strat.sharpe}</span>
+                  <span className="text-xl sm:text-2xl font-bold text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.35)]">{strat.sharpe}</span>
                 </div>
-                <span className="text-[9px] text-zinc-500 block mt-0.5">Annual</span>
+                <span className="text-[9.5px] text-zinc-400 block mt-0.5">Annual</span>
               </div>
             </div>
 
@@ -421,7 +428,7 @@ export function StratMarketProduct() {
                 href={`https://strat-market-chi.vercel.app/chart/${strat.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center gap-2 rounded-lg bg-[#a3e635] px-6 py-3 text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-black transition-all duration-300 hover:bg-[#bef264] hover:shadow-[0_0_25px_rgba(163,230,53,0.35)] active:scale-95 cursor-pointer"
+                className="group relative inline-flex items-center gap-2 rounded-lg bg-[#a3e635] px-6 py-3 text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-black transition-all duration-300 hover:bg-[#bef264] shadow-[0_0_35px_rgba(163,230,53,0.45),0_6px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_50px_rgba(163,230,53,0.7)] active:scale-95 cursor-pointer"
               >
                 <span>Open Live Terminal</span>
                 <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -431,33 +438,35 @@ export function StratMarketProduct() {
                 href="https://strat-market-chi.vercel.app/market"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/[0.03] px-6 py-3 text-xs sm:text-sm font-mono font-medium uppercase tracking-wider text-zinc-300 hover:text-white hover:border-white/30 hover:bg-white/[0.06] transition-all duration-300 backdrop-blur-md cursor-pointer"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/[0.04] px-6 py-3 text-xs sm:text-sm font-mono font-medium uppercase tracking-wider text-zinc-200 hover:text-white hover:border-white/40 hover:bg-white/[0.08] transition-all duration-300 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.5)] cursor-pointer"
               >
                 <span>Browse Catalog</span>
-                <ChevronRight className="size-3.5 text-white/40" />
+                <ChevronRight className="size-3.5 text-white/50" />
               </a>
             </div>
 
           </div>
 
-          {/* RIGHT SIDE: The Live Chart Terminal */}
+          {/* RIGHT SIDE: The Live Chart Terminal - Highlighted with Luminous Ambient Halo & Precision Frame */}
           <div className="lg:col-span-7">
             <div className="relative group">
-              {/* Subtle ambient glow behind terminal */}
-              <div className="absolute -inset-1 rounded-2xl bg-black/60 blur-xl opacity-80 pointer-events-none" />
+              {/* Radiant Ambient Aura Highlighting the Entire Terminal */}
+              <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-[#a3e635]/25 via-emerald-500/15 to-[#38bdf8]/20 blur-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none -z-10" />
 
-              <div className="relative rounded-2xl border border-white/[0.08] bg-black overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.98),inset_0_1px_0_rgba(255,255,255,0.06)]">
+              <div className="relative rounded-2xl border border-white/[0.18] hover:border-[#a3e635]/60 transition-colors duration-500 bg-[#020204] overflow-hidden shadow-[0_0_60px_rgba(163,230,53,0.12),0_25px_80px_rgba(0,0,0,0.98),inset_0_1px_0_rgba(255,255,255,0.12)]">
+                {/* Top Illuminated Accent Hairline */}
+                <div className="absolute top-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#a3e635] to-transparent z-30 opacity-90 shadow-[0_0_10px_#a3e635]" />
             
                 {/* Pro Terminal Top Header Bar */}
                 <div className="h-[44px] bg-black border-b border-white/[0.08] px-3 sm:px-4 flex items-center justify-between text-xs select-none">
                   
                   {/* Left items: Window Dots + Logo + Symbol */}
                   <div className="flex items-center gap-2.5 sm:gap-3">
-                    {/* Mac Window Dots */}
+                    {/* Mac Window Dots - Highlighted */}
                     <div className="hidden sm:flex items-center gap-1.5">
-                      <span className="size-2.5 rounded-full bg-[#ff5f56]/70 border border-[#ff5f56]/90" />
-                      <span className="size-2.5 rounded-full bg-[#ffbd2e]/70 border border-[#ffbd2e]/90" />
-                      <span className="size-2.5 rounded-full bg-[#27c93f]/70 border border-[#27c93f]/90" />
+                      <span className="size-2.5 rounded-full bg-[#ff5f56] shadow-[0_0_8px_rgba(255,95,86,0.8)]" />
+                      <span className="size-2.5 rounded-full bg-[#ffbd2e] shadow-[0_0_8px_rgba(255,189,46,0.8)]" />
+                      <span className="size-2.5 rounded-full bg-[#27c93f] shadow-[0_0_8px_rgba(39,201,63,0.8)]" />
                     </div>
 
                     <div className="hidden sm:block w-[1px] h-3.5 bg-zinc-800" />
@@ -470,27 +479,27 @@ export function StratMarketProduct() {
                       className="flex items-center gap-2 text-white hover:text-[#a3e635] transition-colors"
                       title="StratMarket by Elvaris Capital"
                     >
-                      <svg width="17" height="17" viewBox="0 0 100 118" fill="#ffffff" className="shrink-0" aria-label="StratMarket Logo">
+                      <svg width="17" height="17" viewBox="0 0 100 118" fill="#a3e635" className="shrink-0 drop-shadow-[0_0_8px_rgba(163,230,53,0.5)]" aria-label="StratMarket Logo">
                         <path d="M 99.32 12.66 L 74.40 0.68 L 68.26 0.00 L 2.05 38.65 L 0.00 43.10 L 0.00 60.54 L 1.37 63.62 L 3.41 65.67 L 30.03 79.01 L 47.78 68.75 L 23.55 57.80 L 22.18 56.09 Z" />
                         <path d="M 99.32 59.17 L 96.59 55.41 L 66.55 41.04 L 43.34 54.38 L 70.99 68.06 L 3.07 104.66 L 28.33 116.97 L 35.15 116.97 L 97.27 82.43 L 99.66 77.64 Z" />
                       </svg>
-                      <span className="text-white font-bold tracking-tight text-xs font-mono">StratMarket</span>
+                      <span className="text-white font-bold tracking-tight text-xs font-mono drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">StratMarket</span>
                     </a>
 
                     <div className="w-[1px] h-3.5 bg-zinc-800" />
 
                     {/* Symbol & Timeframe */}
-                    <div className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-white/[0.05] border border-white/10 font-mono text-[11px] text-white">
+                    <div className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#a3e635]/[0.08] border border-[#a3e635]/35 font-mono text-[11px] text-white shadow-[0_0_12px_rgba(163,230,53,0.15)]">
                       <span className="font-bold text-white">{strat.instrument}</span>
                       <span className="text-zinc-500">·</span>
                       <span className="text-[#a3e635] font-semibold">{strat.timeframe}</span>
                     </div>
 
                     {/* Active Model Pill */}
-                    <div className="hidden md:flex items-center gap-1.5 text-[11px] font-mono text-zinc-400">
+                    <div className="hidden md:flex items-center gap-1.5 text-[11px] font-mono text-zinc-300">
                       <span className="text-zinc-600">//</span>
-                      <span className="text-white font-semibold">{strat.id}</span>
-                      <span className="text-[#a3e635]">({strat.badge})</span>
+                      <span className="text-white font-bold">{strat.id}</span>
+                      <span className="text-[#a3e635] font-semibold">({strat.badge})</span>
                     </div>
                   </div>
 
@@ -613,10 +622,10 @@ export function StratMarketProduct() {
                   className="w-full h-full block select-none pointer-events-none"
                 >
                   <defs>
-                    {/* Position Box Gradients matching screenshot */}
+                    {/* Position Box Gradients - Highlighted */}
                     <linearGradient id="tpBoxGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#4ade80" stopOpacity="0.22" />
-                      <stop offset="100%" stopColor="#4ade80" stopOpacity="0.10" />
+                      <stop offset="0%" stopColor="#4ade80" stopOpacity="0.32" />
+                      <stop offset="100%" stopColor="#4ade80" stopOpacity="0.12" />
                     </linearGradient>
                     <linearGradient id="slBoxGrad" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0%" stopColor="#ef4444" stopOpacity="0.10" />
@@ -785,14 +794,13 @@ export function StratMarketProduct() {
                       <rect
                         x={chart.boxX1 + 6}
                         y={chart.tpY - 18}
-                        width="148"
+                        width="154"
                         height="18"
                         rx="3"
-                        fill="#0c0e14"
-                        fillOpacity="0.9"
+                        fill="#051208"
+                        fillOpacity="0.95"
                         stroke="#a3e635"
-                        strokeWidth="0.8"
-                        strokeOpacity="0.6"
+                        strokeWidth="1.2"
                       />
                       <text
                         x={chart.boxX1 + 12}
@@ -800,7 +808,7 @@ export function StratMarketProduct() {
                         fill="#a3e635"
                         fontSize="10"
                         fontFamily="ui-monospace, Menlo, monospace"
-                        fontWeight="700"
+                        fontWeight="800"
                       >
                         {strat.tpLabel}
                       </text>
@@ -840,18 +848,25 @@ export function StratMarketProduct() {
                     </g>
                   )}
 
-                  {/* Current Price Horizontal Dotted Line */}
+                  {/* Current Price Horizontal Dotted Line - Highlighted */}
                   <line
                     x1="0"
                     x2={chart.chartW}
                     y1={chart.currentPriceY}
                     y2={chart.currentPriceY}
                     stroke="#089981"
-                    strokeWidth="1"
+                    strokeWidth="1.2"
                     strokeDasharray="3 3"
                   />
+                  {/* Pulsing live beacon at price endpoint */}
+                  <circle
+                    cx={chart.chartW - 6}
+                    cy={chart.currentPriceY}
+                    r="3.5"
+                    fill="#34d399"
+                  />
 
-                  {/* Current Price Axis Pill (Teal background, White Text) */}
+                  {/* Current Price Axis Pill (Teal background, Crisp White Text, Neon Glow) */}
                   <rect
                     x={chart.chartW + 2}
                     y={chart.currentPriceY - 10}
@@ -859,6 +874,8 @@ export function StratMarketProduct() {
                     height="20"
                     rx="3"
                     fill="#089981"
+                    stroke="#34d399"
+                    strokeWidth="0.8"
                   />
                   <text
                     x={chart.chartW + 35}
@@ -866,7 +883,7 @@ export function StratMarketProduct() {
                     fill="#ffffff"
                     fontSize="11"
                     fontFamily="ui-monospace, Menlo, monospace"
-                    fontWeight="700"
+                    fontWeight="800"
                     textAnchor="middle"
                   >
                     {currentTickPrice.toFixed(2)}
