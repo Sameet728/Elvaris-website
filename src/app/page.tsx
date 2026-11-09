@@ -244,7 +244,7 @@ export default function HomePage() {
         .stick { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; pointer-events: auto; }
         .hero { position: absolute; left: 5vw; bottom: 14vh; max-width: 90vw; will-change: opacity, transform; pointer-events: none; }
         .eye { font: 400 10px var(--mono); letter-spacing: .3em; color: var(--t3); margin-bottom: 26px; }
-        .elvaris-bg-page h1 { font-weight: 200; font-size: clamp(40px, 8.4vw, 128px); line-height: .98; letter-spacing: .01em; margin: 0; }
+        .elvaris-bg-page .hero h1 { font-weight: 200; font-size: clamp(40px, 8.4vw, 128px); line-height: .98; letter-spacing: .01em; margin: 0; }
         .sub { margin-top: 26px; max-width: 430px; color: var(--t2); font-size: 14px; }
         .cap { position: absolute; left: 5vw; bottom: 9vh; opacity: 0; transition: opacity .8s var(--ease); max-width: 380px; }
         .cap.on { opacity: 1; }
