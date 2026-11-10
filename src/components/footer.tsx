@@ -9,8 +9,10 @@ const footerLinks = {
     { name: "Documentation", href: "/documentation" },
   ],
   Documentation: [
+    { name: "Documentation Hub", href: "/docs" },
     { name: "Getting Started", href: "/documentation/introduction" },
-    { name: "Methods", href: "/documentation/backtesting" },
+    { name: "Strategy Catalog", href: "/docs/algorithmic-strategies" },
+    { name: "Research Methods", href: "/documentation/backtesting" },
     { name: "Glossary", href: "/documentation/sharpe-ratio" },
   ],
   Company: [

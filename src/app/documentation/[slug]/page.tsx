@@ -13,37 +13,202 @@ export default async function DocArticlePage({ params }: { params: Promise<{ slu
     notFound();
   }
 
-  // A very basic markdown parser to render the content for the documentation
+  // Enhanced markdown parser to render headings, code blocks, tables, blockquotes, and inline styling
+  const renderInline = (text: string): React.ReactNode => {
+    const parts: React.ReactNode[] = [];
+    const regex = /(`[^`]+`|\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g;
+    let lastIndex = 0;
+    let match: RegExpExecArray | null;
+
+    while ((match = regex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(text.substring(lastIndex, match.index));
+      }
+      const raw = match[0];
+      if (raw.startsWith('`') && raw.endsWith('`')) {
+        parts.push(
+          <code key={match.index} className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-[13px] text-white">
+            {raw.slice(1, -1)}
+          </code>
+        );
+      } else if (raw.startsWith('**') && raw.endsWith('**')) {
+        parts.push(
+          <strong key={match.index} className="font-semibold text-fg-100">
+            {raw.slice(2, -2)}
+          </strong>
+        );
+      } else if (raw.startsWith('[') && raw.includes('](')) {
+        const titleMatch = raw.match(/\[([^\]]+)\]\(([^)]+)\)/);
+        if (titleMatch) {
+          const [, linkTitle, linkHref] = titleMatch;
+          parts.push(
+            <a
+              key={match.index}
+              href={linkHref}
+              target={linkHref.startsWith('http') ? '_blank' : undefined}
+              rel={linkHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+              className="text-white underline decoration-white/40 underline-offset-4 hover:decoration-white"
+            >
+              {linkTitle}
+            </a>
+          );
+        } else {
+          parts.push(raw);
+        }
+      }
+      lastIndex = regex.lastIndex;
+    }
+    if (lastIndex < text.length) {
+      parts.push(text.substring(lastIndex));
+    }
+    return parts.length > 0 ? parts : text;
+  };
+
   const renderContent = (content: string) => {
-    return content.split('\n\n').map((paragraph, i) => {
-      if (paragraph.startsWith('## ')) {
-        const id = paragraph.replace('## ', '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
-        return <h2 key={i} id={id} className="text-2xl font-medium mt-12 mb-4 text-fg-100">{paragraph.replace('## ', '')}</h2>;
+    const blocks: React.ReactNode[] = [];
+    const rawParagraphs = content.split('\n\n');
+
+    rawParagraphs.forEach((paragraph, i) => {
+      const trimmed = paragraph.trim();
+      if (!trimmed) return;
+
+      // 1. Code block
+      if (trimmed.startsWith('```') && trimmed.endsWith('```')) {
+        const lines = trimmed.split('\n');
+        const lang = lines[0].replace('```', '').trim();
+        const codeText = lines.slice(1, -1).join('\n');
+        blocks.push(
+          <div key={i} className="my-6 overflow-hidden rounded-xl border border-white/10 bg-[#07080a] shadow-2xl">
+            {lang && (
+              <div className="flex items-center justify-between border-b border-white/5 bg-white/[0.02] px-4 py-2 text-[11px] font-mono uppercase text-fg-300">
+                <span>{lang}</span>
+              </div>
+            )}
+            <pre className="overflow-x-auto p-4 text-[13px] font-mono leading-relaxed text-fg-200">
+              <code>{codeText}</code>
+            </pre>
+          </div>
+        );
+        return;
       }
-      if (paragraph.startsWith('### ')) {
-        const id = paragraph.replace('### ', '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
-        return <h3 key={i} id={id} className="text-xl font-medium mt-8 mb-4 text-fg-100">{paragraph.replace('### ', '')}</h3>;
+
+      // 2. Table
+      if (trimmed.startsWith('|') && trimmed.includes('\n|')) {
+        const rows = trimmed.split('\n').filter(r => r.trim().startsWith('|'));
+        if (rows.length >= 2) {
+          const headerCells = rows[0].split('|').slice(1, -1).map(c => c.trim());
+          const bodyRows = rows.slice(2).map(r => r.split('|').slice(1, -1).map(c => c.trim()));
+          blocks.push(
+            <div key={i} className="my-8 overflow-x-auto rounded-xl border border-white/10 bg-surface-100/40">
+              <table className="w-full text-left text-sm text-fg-200 border-collapse">
+                <thead>
+                  <tr className="border-b border-white/10 bg-white/[0.02] text-xs font-semibold uppercase tracking-wider text-fg-100">
+                    {headerCells.map((h, hIdx) => (
+                      <th key={hIdx} className="px-4 py-3.5 whitespace-nowrap">
+                        {renderInline(h)}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5 font-normal">
+                  {bodyRows.map((row, rIdx) => (
+                    <tr key={rIdx} className="transition-colors hover:bg-white/[0.02]">
+                      {row.map((cell, cIdx) => (
+                        <td key={cIdx} className="px-4 py-3 text-fg-200 whitespace-nowrap">
+                          {renderInline(cell)}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+          return;
+        }
       }
-      if (paragraph.startsWith('- ')) {
-        return (
-          <ul key={i} className="list-disc pl-6 space-y-2 mb-6 text-fg-200">
-            {paragraph.split('\n').map((item, j) => (
-              <li key={j}>{item.replace('- ', '')}</li>
+
+      // 3. Blockquote / Alert
+      if (trimmed.startsWith('> ')) {
+        const cleanText = trimmed.split('\n').map(l => l.replace(/^>\s?/, '')).join(' ');
+        blocks.push(
+          <blockquote key={i} className="my-6 rounded-r-xl border-l-2 border-white/60 bg-white/[0.02] py-3.5 pl-4 pr-4 text-fg-200 italic">
+            {renderInline(cleanText)}
+          </blockquote>
+        );
+        return;
+      }
+
+      // 4. Headings
+      if (trimmed.startsWith('## ')) {
+        const title = trimmed.replace('## ', '');
+        const id = title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        blocks.push(
+          <h2 key={i} id={id} className="mt-14 mb-4 text-[26px] font-medium tracking-tight text-fg-100 border-b border-white/5 pb-3">
+            {title}
+          </h2>
+        );
+        return;
+      }
+      if (trimmed.startsWith('### ')) {
+        const title = trimmed.replace('### ', '');
+        const id = title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        blocks.push(
+          <h3 key={i} id={id} className="mt-8 mb-3 text-xl font-medium tracking-tight text-fg-100">
+            {title}
+          </h3>
+        );
+        return;
+      }
+      if (trimmed.startsWith('#### ')) {
+        const title = trimmed.replace('#### ', '');
+        blocks.push(
+          <h4 key={i} className="mt-6 mb-2 text-base font-semibold text-fg-100">
+            {title}
+          </h4>
+        );
+        return;
+      }
+
+      // 5. Unordered List
+      if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+        const items = trimmed.split('\n').map(l => l.replace(/^[-*]\s+/, ''));
+        blocks.push(
+          <ul key={i} className="my-6 list-disc space-y-2.5 pl-6 text-fg-200">
+            {items.map((item, j) => (
+              <li key={j} className="leading-relaxed">
+                {renderInline(item)}
+              </li>
             ))}
           </ul>
         );
+        return;
       }
-      if (/^\d+\. /.test(paragraph)) {
-         return (
-          <ol key={i} className="list-decimal pl-6 space-y-2 mb-6 text-fg-200">
-            {paragraph.split('\n').map((item, j) => (
-              <li key={j}>{item.replace(/^\d+\. /, '')}</li>
+
+      // 6. Ordered List
+      if (/^\d+\.\s/.test(trimmed)) {
+        const items = trimmed.split('\n').map(l => l.replace(/^\d+\.\s+/, ''));
+        blocks.push(
+          <ol key={i} className="my-6 list-decimal space-y-2.5 pl-6 text-fg-200">
+            {items.map((item, j) => (
+              <li key={j} className="leading-relaxed">
+                {renderInline(item)}
+              </li>
             ))}
           </ol>
         );
+        return;
       }
-      return <p key={i} className="leading-relaxed text-fg-200 mb-6">{paragraph}</p>;
+
+      // 7. Regular paragraph
+      blocks.push(
+        <p key={i} className="mb-6 leading-relaxed text-fg-200 text-base">
+          {renderInline(trimmed)}
+        </p>
+      );
     });
+
+    return blocks;
   };
 
   return (

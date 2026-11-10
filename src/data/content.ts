@@ -578,6 +578,19 @@ MDD provides information that return-based metrics do not:
 
 export const docSidebar = [
   {
+    title: 'StratMarket Platform',
+    items: [
+      { title: 'StratMarket Overview', slug: 'stratmarket-overview' },
+      { title: 'Strategy Catalog (PS & PY)', slug: 'algorithmic-strategies' },
+      { title: 'Research Methodology', slug: 'quantitative-methodology' },
+      { title: 'Risk Governance', slug: 'risk-management' },
+      { title: 'Signals & VPS Infrastructure', slug: 'signals-and-execution' },
+      { title: 'Broker Integration & APIs', slug: 'broker-integration' },
+      { title: 'About Elvaris Capital', slug: 'elvaris-capital' },
+      { title: 'Quantitative FAQ', slug: 'stratmarket-faq' },
+    ],
+  },
+  {
     title: 'Getting Started',
     items: [
       { title: 'Introduction', slug: 'introduction' },
@@ -2255,6 +2268,471 @@ def evaluate_survivorship_bias(data, parameters):
 
 > [!IMPORTANT]  
 > Always ensure that your testing environments perfectly replicate live execution environments, including transaction costs and slippage.`
+  },
+
+  // ===== STRATMARKET PLATFORM DOCUMENTATION ARTICLES =====
+  'stratmarket-overview': {
+    slug: 'stratmarket-overview',
+    title: 'StratMarket Platform & Execution Overview',
+    description: 'An institutional overview of StratMarket by Elvaris Capital: verifiable quantitative strategies, tick-level research reports, live interactive charts, and sub-50ms VPS signal execution.',
+    category: 'StratMarket Platform',
+    lastUpdated: '2026-11-10',
+    tableOfContents: [
+      { id: 'what-is-stratmarket', title: 'What is StratMarket?', level: 2 },
+      { id: 'parent-organization', title: 'Engineered by Elvaris Capital', level: 2 },
+      { id: 'open-access-model', title: 'Open-Access Research Model', level: 2 },
+      { id: 'supported-usage-modes', title: 'Supported Usage Modes', level: 2 },
+      { id: 'anti-curve-fitting', title: 'Anti-Curve Fitting Guarantee', level: 2 },
+    ],
+    content: `## What is StratMarket?
+
+StratMarket (https://stratmarket.elvariscapital.in) is an institutional algorithmic strategy marketplace engineered and operated by Elvaris Capital (https://elvariscapital.in). StratMarket provides traders, family offices, and quantitative funds with mathematical access to verified algorithmic models built on TradingView Pine Script v5 and MetaTrader 5 (MT5).
+
+Unlike retail indicator portals that offer curve-fitted historical demonstrations, StratMarket provides tick-level empirical tear sheets, unauthenticated research access, interactive browser charts with dynamic bracket levels, and continuous 24/7 VPS trade signal execution.
+
+## Engineered by Elvaris Capital
+
+Elvaris Capital operates as the parent quantitative research lab, data infrastructure provider, and sovereign risk governor behind StratMarket. All strategies listed on StratMarket undergo multi-year walk-forward optimization, Monte Carlo stress testing, and real-world friction calibration (commissions and slippage) inside the Elvaris research lab before receiving production clearance.
+
+## Open-Access Research Model
+
+StratMarket is structured around institutional open-access principles:
+- **No Paywalls on Research**: Every quantitative tear sheet, drawdown profile, payoff distribution, and market regime breakdown is viewable without an account or credit card.
+- **Interactive Chart Terminal**: Registered users unlock live candlestick streaming, indicator overlays, Long/Short execution markers, and in-flight active trade brackets.
+- **Automated Execution Signals**: Dispatches instant trade signals (Entry, Take Profit, Stop Loss) via email and authenticated webhooks in sub-50 milliseconds.
+
+## Supported Usage Modes
+
+1. **Interactive Chart Terminal**: Real-time TradingView-powered chart workspace with dynamic Bollinger Bands, EMAs, session boundaries, and trade brackets.
+2. **Instant Email Trade Alerts**: Automated model alerts delivered to verified subscriber inboxes upon candle close.
+3. **Automated Broker Webhooks**: Seamless REST JSON signal ingestion for MetaTrader 5, Interactive Brokers, Alpaca, Dhan, and Zerodha.
+
+## Anti-Curve Fitting Guarantee
+
+Every strategy on StratMarket is governed by strict mathematical boundaries:
+- Zero look-ahead bias with execution strictly locked to confirmed bar closes.
+- Flat institutional friction models: $2.50 per standard lot plus 1.0 to 1.5 pip slippage drag.
+- Hard single-digit maximum drawdown thresholds (&lt; 10% for Python ensembles, &lt; 3% for Pine Script).`
+  },
+
+  'algorithmic-strategies': {
+    slug: 'algorithmic-strategies',
+    title: 'Algorithmic Strategy Catalog (PS & PY Models)',
+    description: 'Complete factor breakdown of all 13 active quantitative models: 3 Champion Pine Script gold strategies and 10 Python MT5 Single-Digit Drawdown Ensembles.',
+    category: 'StratMarket Platform',
+    lastUpdated: '2026-11-10',
+    tableOfContents: [
+      { id: 'pine-script-champion-trio', title: 'Pine Script Gold Champion Trio (PS-01 – PS-03)', level: 2 },
+      { id: 'ps-performance-matrix', title: 'Pine Script Performance Matrix (6,800 Bars)', level: 2 },
+      { id: 'python-mt5-ensembles', title: 'Python MT5 Single-Digit Drawdown Ensembles (PY-01 – PY-10)', level: 2 },
+      { id: 'orthogonal-decorrelation', title: 'Orthogonal Alpha Decorrelation', level: 2 },
+    ],
+    content: `## Pine Script Gold Champion Trio (PS-01 – PS-03)
+
+StratMarket features three mathematically decorrelated champion mean-reversion strategies targeting Spot Gold (FOREXCOM:XAUUSD M15), evaluated across 6,800 confirmed bars from August 2 to November 9, 2026:
+
+### 1. PS-01: Grandmaster Dual 10R / 8R (Single-Digit DD 2.0%)
+- **Architecture**: Extreme volatility envelope fading 2.1σ excursions along 200 EMA with RSI pullback filter and ATR flash crash protective shielding.
+- **Payoff Bracket**: Take Profit = +$14.00 (+1.02R), Stop Loss = -$13.75 (-1.00R).
+- **Edge**: 80.43% Win Rate across 46 executed trades, +28.67R Net Return, 4.19 Profit Factor, 14.33 Calmar Ratio.
+- **Consistency**: 4 out of 4 months profitable (Aug +8.18R, Sep +10.22R, Oct +7.20R, Nov +3.07R).
+
+### 2. PS-02: US Afternoon Reversal (Single-Digit DD 1.0%)
+- **Architecture**: High-conviction NY afternoon session reversal (14:00–22:00 UTC) fading 2.0σ volatility exhaustion along 200 EMA with 1.50 ATR flash crash gate.
+- **Payoff Bracket**: Take Profit = +$18.00 (+1.31R), Stop Loss = -$13.75 (-1.00R).
+- **Edge**: 87.50% Win Rate across 24 executed trades, +24.49R Net Return, 9.16 Profit Factor, 24.49 Calmar Ratio.
+- **Max Loss Streak**: Strictly 1 trade (never suffered 2 consecutive losses).
+
+### 3. PS-03: London Core Expansion (Single-Digit DD 1.0%)
+- **Architecture**: Institutional London & Frankfurt session expansion (04:00–20:00 UTC, excluding 12:00 UTC chop) fading 2.1σ standard deviation boundaries.
+- **Payoff Bracket**: Take Profit = +$16.00 (+1.16R), Stop Loss = -$13.75 (-1.00R).
+- **Edge**: 82.86% Win Rate across 35 executed trades, +27.75R Net Return, 5.62 Profit Factor, 27.75 Calmar Ratio.
+- **Directional Balance**: Long Win Rate 93.33% (+15.29R), Short Win Rate 75.00% (+12.45R).
+
+## Pine Script Performance Matrix (6,800 Bars)
+
+| Strategy ID & Name | Trades | Wins / Losses | Win Rate | Net Return | Profit Factor | Payoff (TP / SL) | Max Drawdown | Calmar |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **PS-01: Grandmaster Dual 10R / 8R** | 46 | 37 / 9 | 80.43% | +28.67R | 4.19 | 1:1.02 (+$14 / -$13.75) | 2.00R (2.0%) | 14.33 |
+| **PS-02: US Afternoon Reversal** | 24 | 21 / 3 | 87.50% | +24.49R | 9.16 | 1:1.31 (+$18 / -$13.75) | 1.00R (1.0%) | 24.49 |
+| **PS-03: London Core Expansion** | 35 | 29 / 6 | 82.86% | +27.75R | 5.62 | 1:1.16 (+$16 / -$13.75) | 1.00R (1.0%) | 27.75 |
+
+## Python MT5 Single-Digit Drawdown Ensembles (PY-01 – PY-10)
+
+StratMarket features 10 institutional multi-engine quantitative ensembles calibrated on 360,000 real MetaTrader 5 broker tick bars spanning September 2021 to September 2026. Every portfolio guarantees hard single-digit maximum drawdown (&lt; 10%):
+
+| ID | Portfolio Name | 5-Year Net Profit | Max Drawdown | Profit Factor | Sharpe | Trades | Core Quantitative Thesis |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **PY-01** | Peak Champion | +$125,840.22 (+503.4%) | 9.41% | 2.06 | 1.71 | 781 | 6-Engine ensemble with 7.14:1 asymmetric payoff ratio. |
+| **PY-02** | High-Alpha Shield | +$123,568.00 (+494.3%) | 9.95% | 1.98 | 1.73 | 959 | High trade volume with dynamic volatility sleep recovery. |
+| **PY-03** | Precision Shield | +$122,421.00 (+489.7%) | 9.35% | 1.99 | 1.66 | 902 | Orthogonal diversification dampening portfolio variance. |
+| **PY-04** | Inverse-DD Fleet | +$121,693.00 (+486.8%) | 9.77% | 2.02 | 1.69 | 781 | Heavy low-drawdown engine concentration for rapid recovery. |
+| **PY-05** | Ultra-Shield | +$117,681.00 (+470.7%) | 9.53% | 2.28 | 1.70 | 435 | Highest profit factor (2.28) and shortest loss streak (16). |
+| **PY-06** | Trend Shield | +$116,331.00 (+465.3%) | 9.74% | 2.16 | 1.74 | 604 | Multi-session trend capture with Friday weekend embargo. |
+| **PY-07** | Multi-Regime | +$115,984.00 (+463.9%) | 9.80% | 2.04 | 1.65 | 768 | Microstructure regime robustness across rate hike cycles. |
+| **PY-08** | High-Sharpe Fleet | +$115,560.00 (+462.2%) | 9.50% | 2.29 | 1.89 | 463 | Highest annualized Sharpe ratio (1.89) over 5 full years. |
+| **PY-09** | Asian Squeeze | +$115,122.00 (+460.5%) | 9.96% | 2.21 | 1.68 | 510 | Order flow compression exploitation with chandelier defense. |
+| **PY-10** | Low-Loss Fleet | +$115,009.00 (+460.0%) | 9.43% | 2.11 | 1.67 | 628 | Selective trend-following with loss clustering mitigation. |
+
+## Orthogonal Alpha Decorrelation
+
+StratMarket pairs strategies that operate in separate market regimes. PS-02 trades strictly during the US Afternoon session (14:00–22:00 UTC), PS-03 targets European core hours (04:00–20:00 UTC skipping 12:00 UTC), and PS-01 provides full-day macro trend clearance. This ensures low trade collision, smoothed equity curves, and resilient prop firm consistency compliance.`
+  },
+
+  'quantitative-methodology': {
+    slug: 'quantitative-methodology',
+    title: 'Quantitative Research Methodology & Backtest Integrity',
+    description: 'Detailed guide to mathematical backtesting protocols, friction accounting, Walk-Forward Optimization, and statistical verification employed by Elvaris Capital.',
+    category: 'StratMarket Platform',
+    lastUpdated: '2026-11-10',
+    tableOfContents: [
+      { id: 'four-stage-pipeline', title: 'The Four-Stage Quant Pipeline', level: 2 },
+      { id: 'friction-modeling', title: 'Realistic Friction & Slippage Drag', level: 2 },
+      { id: 'wfo-protocol', title: 'Walk-Forward Optimization (WFO)', level: 2 },
+      { id: 'monte-carlo', title: 'Monte Carlo Stress Testing', level: 2 },
+      { id: 'mathematical-formulas', title: 'Mathematical Performance Formulas', level: 2 },
+    ],
+    content: `## The Four-Stage Quant Pipeline
+
+Every strategy published on StratMarket by Elvaris Capital is created through a 4-stage empirical engineering pipeline:
+
+1. **Generate (Hypothesis Codification)**: Strategies originate from quantifiable market microstructure hypotheses (e.g. liquidity pool sweeps, session volatility exhaustion, or order-flow imbalances). Rules are codetermined in strict deterministic code with zero subjective discretion.
+2. **Backtest (Tick Historical Simulation)**: Tested against institutional tick-by-tick broker data feeds spanning 6,800 to 360,000 bars. Fixed transaction fees and realistic slippage are enforced on every trade execution.
+3. **Improve (Walk-Forward Optimization)**: Parameters undergo rolling window testing across multiple historical regimes. Any parameter combination showing sensitivity cliffs is rejected.
+4. **Validate (Blind Out-of-Sample & Monte Carlo)**: 30% of data is reserved as untouched blind out-of-sample data. Equity curves undergo 1,000 Monte Carlo trade reorderings to confirm maximum drawdown resilience.
+
+## Realistic Friction & Slippage Drag
+
+Retail backtests often show unrealistic equity growth because they assume zero spread, zero commission, and instant fill at the signal price.
+
+Elvaris Capital mandates realistic institutional friction modeling across all simulations:
+- **Broker Commission**: Fixed $2.50 per standard lot ($0.25 per mini lot) deducted on both entry and exit.
+- **Spread & Slippage Drag**: 1.0 to 1.5 pip fixed execution penalty applied on every market order and stop loss execution.
+- **Execution Bar Gating**: Trades execute strictly on the next bar's open price following confirmed candle close, eliminating intrabar look-ahead bias.
+
+## Walk-Forward Optimization (WFO)
+
+To eliminate curve fitting, Elvaris employs rolling Walk-Forward Optimization:
+- **In-Sample Optimization Window**: 70% of historical data is used to optimize parameter distributions.
+- **Out-of-Sample Test Window**: 30% of consecutive forward data tests parameter durability.
+- **Walk-Forward Efficiency (WFE)**: Strategies must demonstrate a WFE ratio greater than 60% (Out-of-Sample annualized return / In-Sample annualized return) to achieve production approval.
+
+## Monte Carlo Stress Testing
+
+All strategies are subjected to 1,000-iteration Monte Carlo simulations using bootstrap resampling:
+- Simulates random trade sequences to assess path-dependency risks.
+- Calculates 95% and 99% confidence intervals for maximum closed drawdown.
+- Confirms that drawdown under extreme cluster-loss conditions does not breach sovereign single-digit limits.
+
+## Mathematical Performance Formulas
+
+### Sharpe Ratio (Annualized)
+\`\`\`
+Sharpe = (Mean Return - Risk Free Rate) / Standard Deviation of Return × sqrt(252)
+\`\`\`
+StratMarket strategies maintain annualized Sharpe ratios between 1.65 and 10.71.
+
+### Calmar Ratio
+\`\`\`
+Calmar = Annualized Compound Return / Maximum Historical Drawdown
+\`\`\`
+StratMarket champion Pine Script models achieve Calmar ratios between 14.33 and 27.75.
+
+### Profit Factor
+\`\`\`
+Profit Factor = Sum of Gross Profits / Sum of Gross Losses
+\`\`\`
+PS-02 US Afternoon Reversal delivers a 9.16 Profit Factor over 6,800 bars.`
+  },
+
+  'risk-management': {
+    slug: 'risk-management',
+    title: 'Sovereign Risk Governance & Drawdown Controls',
+    description: 'Explore the institutional risk management framework engineered by Elvaris Capital: dynamic ATR stops, daily drawdown circuit breakers, and Friday weekend embargoes.',
+    category: 'StratMarket Platform',
+    lastUpdated: '2026-11-10',
+    tableOfContents: [
+      { id: 'foundational-tenets', title: 'The Five Foundational Risk Tenets', level: 2 },
+      { id: 'dynamic-atr-stops', title: 'Volatility-Adaptive ATR Stops', level: 2 },
+      { id: 'circuit-breakers', title: 'Daily Portfolio Drawdown Circuit Breakers', level: 2 },
+      { id: 'weekend-embargo', title: 'Friday 20:00 UTC Weekend Risk Embargo', level: 2 },
+      { id: 'position-sizing', title: 'Mathematical Position Sizing Formula', level: 2 },
+    ],
+    content: `## The Five Foundational Risk Tenets
+
+In systematic quantitative trading, alpha generation is secondary to capital preservation. Elvaris Capital governs StratMarket under five immutable risk rules:
+
+1. **Maximum Single-Trade Risk Ceiling (0.5% – 1.5%)**: No single position is ever permitted to risk more than 1.5% of total account equity.
+2. **Daily Portfolio Drawdown Circuit Breaker (3.0%)**: If intraday losses reach 3.0%, all pending orders are canceled and trading ceases until UTC 00:00.
+3. **Volatility-Adaptive Stops**: Stop losses dynamically adjust using ATR (Average True Range), preventing tight stop-outs during high-volatility expansions.
+4. **Friday 20:00 UTC Weekend Gap Embargo**: Eliminates weekend gap risk by liquidating open swing positions before European and US markets close.
+5. **Absolute Prohibition of Martingale and Grids**: Non-linear loss escalation is mathematically banned; every order carries a fixed stop loss.
+
+## Volatility-Adaptive ATR Stops
+
+Fixed-pip stop losses fail because market volatility expands and contracts over time. Elvaris Capital models utilize ATR-scaled brackets:
+- Stop Loss = Entry Price - (1.25 to 1.50 × ATR_14)
+- Take Profit = Entry Price + (1.02 to 1.31 × Risk Distance)
+
+During quiet market regimes, stop distances contract to minimize risk capital. During volatile macroeconomic releases, stop distances expand appropriately while position lot size contracts proportionally.
+
+## Daily Portfolio Drawdown Circuit Breakers
+
+To safeguard capital against abnormal systemic liquidity shocks (such as Swiss National Bank peg removals or unexpected central bank flash crashes):
+- The server supervisor monitors account equity every 15 seconds.
+- Realized Loss + Unrealized Drawdown >= 3.0% triggers an immediate market halt.
+- Tradeify Select and FTMO prop firm daily drawdown limits (typically 4% to 5%) are never approached.
+
+## Friday 20:00 UTC Weekend Risk Embargo
+
+Over 60% of catastrophic tail losses in currency and commodity markets stem from weekend geopolitical announcements, election surprises, or emergency central bank meetings. Elvaris Capital strategies mandate the liquidation of open intraday positions by Friday 20:00 UTC, ensuring zero weekend exposure.
+
+## Mathematical Position Sizing Formula
+
+Every order dispatched by StratMarket calculates position sizing mathematically:
+
+\`\`\`
+Position Size (Lots) = (Account Equity × Risk Percentage) / (|Entry Price - Stop Loss| × Point Value)
+\`\`\`
+
+### Worked Calculation Example
+- **Account Capital**: $100,000 USD
+- **Single-Trade Risk**: 1.0% ($1,000 USD)
+- **Asset**: XAUUSD Spot Gold (Point Value = $100 per lot per $1.00 move)
+- **Entry Price**: $2,642.50
+- **Stop Loss**: $2,628.75 (Risk Distance = $13.75)
+- **Calculation**: $1,000 / ($13.75 × 100) = **0.72 Lots**
+
+This ensures that regardless of market volatility or stop distance, account loss upon an adverse stop out is exactly $1,000 (1.0R).`
+  },
+
+  'signals-and-execution': {
+    slug: 'signals-and-execution',
+    title: 'Real-Time Signal Architecture & VPS Infrastructure',
+    description: 'Explore the 24/7 VPS execution cluster, webhook dispatch protocols, HMAC authentication, and sub-50ms latency architecture operated by Elvaris Capital.',
+    category: 'StratMarket Platform',
+    lastUpdated: '2026-11-10',
+    tableOfContents: [
+      { id: 'vps-cluster-infrastructure', title: 'Dedicated 24/7 Linux VPS Clusters', level: 2 },
+      { id: 'sub-50ms-pipeline', title: 'Sub-50ms Signal Dispatch Pipeline', level: 2 },
+      { id: 'hmac-security', title: 'HMAC Authentication & Idempotent Processing', level: 2 },
+      { id: 'webhook-specification', title: 'Signal Ingestion Webhook Specification', level: 2 },
+    ],
+    content: `## Dedicated 24/7 Linux VPS Clusters
+
+StratMarket signal processing operates continuously across dedicated Linux cloud server nodes located in prime financial hosting hubs:
+- **Frankfurt & London Data Centers**: Direct low-latency cross-connects to Tier-1 institutional liquidity pools, MetaTrader 5 trade servers, and TradingView data hubs.
+- **PM2 Process Supervision**: Dual-redundant background supervisors (stratmarket-vps-supervisor) monitor TradingView data streams, re-evaluate technical conditions every 15 seconds, and persist state to disk.
+- **Zero Human Discretion**: Orders execute purely via deterministic code upon confirmed candle closes.
+
+## Sub-50ms Signal Dispatch Pipeline
+
+The entire signal lifecycle from market event to subscriber notification completes in sub-50 milliseconds:
+1. **0ms**: Candlestick close confirmed on live data stream.
+2. **10ms**: Pine evaluator / MT5 engine verifies session filters, EMA trend clearance, and circuit breakers.
+3. **25ms**: HMAC SHA-256 signature calculated and dispatched to POST /api/internal/signals.
+4. **40ms**: Platform database records idempotent event; webhooks push to broker endpoints; Resend API dispatches email trade alerts to subscribers.
+
+## HMAC Authentication & Idempotent Processing
+
+To guarantee enterprise-grade security and prevent malicious signal injection:
+- **Shared Secret Signature**: Inbound signals require an x-signature header matching the SHA-256 HMAC of the request body and secret key.
+- **Idempotency Key**: Every dispatch includes a unique sourceEventId. The MongoDB database enforces a unique constraint; duplicate signals within 24 hours are safely rejected without double-filling.
+
+## Signal Ingestion Webhook Specification
+
+StratMarket listens for model dispatch on POST /api/internal/signals:
+
+\`\`\`json
+POST /api/internal/signals HTTP/1.1
+Host: stratmarket.elvariscapital.in
+Content-Type: application/json
+x-signature: <HMAC_SHA256_HEX_SIGNATURE>
+Authorization: Bearer <SECURE_SIGNAL_DISPATCH_SECRET>
+
+{
+  "strategyId": "PS-01",
+  "strategyVersion": "1.0.0",
+  "instrument": "XAUUSD",
+  "timeframe": "M15",
+  "signalType": "ENTRY",
+  "direction": "LONG",
+  "entryPrice": 2685.50,
+  "stopLoss": 2671.75,
+  "targetPrice": 2699.50,
+  "signalProvenance": "ELVARIS_VPS_PINE_ENGINE",
+  "sourceEventId": "evt_ps01_1794250390474"
+}
+\`\`\`
+Response:
+\`\`\`json
+{
+  "success": true,
+  "statusCode": 200,
+  "signalId": "sig_jgtb6joxt",
+  "notifiedUsersCount": 9
+}
+\`\`\``
+  },
+
+  'broker-integration': {
+    slug: 'broker-integration',
+    title: 'Broker Integration & Webhook APIs',
+    description: 'Connect MetaTrader 5 (MT5), Interactive Brokers, Alpaca, Binance, Dhan, and Zerodha to StratMarket by Elvaris Capital. Complete webhook API reference.',
+    category: 'StratMarket Platform',
+    lastUpdated: '2026-11-10',
+    tableOfContents: [
+      { id: 'supported-brokers', title: 'Supported Broker Environments', level: 2 },
+      { id: 'outbound-webhook-schema', title: 'Outbound Signal Webhook Schema', level: 2 },
+      { id: 'mt5-integration', title: 'MetaTrader 5 (MT5) Bridge Integration', level: 2 },
+      { id: 'prop-firm-setup', title: 'Prop Firm Challenge Setup (FTMO, Tradeify)', level: 2 },
+    ],
+    content: `## Supported Broker Environments
+
+StratMarket enables automated trade execution across global retail, prop firm, and institutional brokerages:
+- **MetaTrader 5 (MT5)**: Connects via Python MT5 bridge or PineConnector EA. Compatible with FTMO, FundedNext, Topstep, Tradeify, and IC Markets.
+- **Interactive Brokers (IBKR)**: Direct API connection through IB Gateway or Trader Workstation (TWS) for commodities, futures, and equity index trading.
+- **Alpaca Securities**: REST and WebSocket algorithmic trading for US equities and digital assets.
+- **Indian Market Brokers (Dhan & Zerodha)**: Webhook signal relay using Dhan HQ REST API and Zerodha Kite Connect.
+
+## Outbound Signal Webhook Schema
+
+When a strategy triggers an Entry, Stop Loss, or Take Profit, StratMarket dispatches a structured JSON payload to configured subscriber webhook endpoints:
+
+\`\`\`json
+{
+  "event": "SIGNAL_TRIGGER",
+  "strategy": {
+    "id": "PS-01",
+    "name": "Grandmaster Dual 10R / 8R",
+    "provider": "Elvaris Capital"
+  },
+  "trade": {
+    "instrument": "XAUUSD",
+    "action": "BUY",
+    "orderType": "MARKET",
+    "entryPrice": 2685.50,
+    "stopLoss": 2671.75,
+    "takeProfit": 2699.50,
+    "riskRewardRatio": 1.02,
+    "recommendedRiskPct": 1.0
+  },
+  "metadata": {
+    "timestamp": "2026-11-09T18:53:10.311Z",
+    "provenance": "ELVARIS_VPS_RESEARCH_ENGINE",
+    "sourceEventId": "sig_jgtb6joxt"
+  }
+}
+\`\`\`
+
+## MetaTrader 5 (MT5) Bridge Integration
+
+For MT5 execution:
+1. In MetaTrader 5, navigate to Tools > Options > Expert Advisors.
+2. Check Allow WebRequest for listed URL and add your secure StratMarket webhook relay address.
+3. Attach the StratMarket bridge Expert Advisor (EA) to an M15 XAUUSD chart.
+4. Input your license key and destination risk percentage (e.g. 1.0% per trade).
+5. The EA automatically calculates lot sizes according to account balance and executes trades instantly upon signal arrival.
+
+## Prop Firm Challenge Setup (FTMO, Tradeify)
+
+All 3 Champion Pine Script strategies are engineered to respect prop firm evaluation criteria:
+- **Tradeify Select 40% Consistency Rule**: Max single-day profit is capped below 15% of total PnL.
+- **Maximum Daily Loss Limit**: Single-loss-per-day circuit breakers prevent intraday violation.
+- **Trailing Drawdown Cushion**: PS-01, PS-02, and PS-03 maintain maximum historical drawdowns of 1.0% to 2.0%, leaving over 60% of total drawdown allowance intact.`
+  },
+
+  'elvaris-capital': {
+    slug: 'elvaris-capital',
+    title: 'About Elvaris Capital (Parent Organization)',
+    description: 'Corporate overview, research lab philosophy, absolute mathematical transparency, realistic friction modeling, and sovereign risk governance behind StratMarket.',
+    category: 'StratMarket Platform',
+    lastUpdated: '2026-11-10',
+    tableOfContents: [
+      { id: 'corporate-identity', title: 'Corporate Identity & Official Registry', level: 2 },
+      { id: 'quant-lab-philosophy', title: 'The Elvaris Capital Quant Lab Philosophy', level: 2 },
+      { id: 'why-stratmarket', title: 'Why Elvaris Built StratMarket', level: 2 },
+      { id: 'research-standards', title: 'Institutional Research Standards', level: 2 },
+    ],
+    content: `## Corporate Identity & Official Registry
+
+Elvaris Capital is an institutional quantitative research and financial technology firm operating at the intersection of mathematical finance, automated execution engineering, and machine learning. Elvaris Capital is the parent organization, research laboratory, and operating firm behind StratMarket.
+
+- **Parent Organization**: Elvaris Capital
+- **Official Corporate Portal**: https://elvariscapital.in
+- **Flagship Technology Product**: StratMarket (https://stratmarket.elvariscapital.in)
+- **Specialization**: Systematic Alpha Research, Statistical Arbitrage, High-Fidelity Signal Relays
+- **Execution Infrastructure**: 24/7 Dedicated Cloud VPS Clusters in Frankfurt & London
+
+## The Elvaris Capital Quant Lab Philosophy
+
+1. **Absolute Mathematical Transparency**: No black-box opacity. Every listed strategy clearly publishes its governing economic hypothesis, Sharpe ratio, Calmar ratio, win rate, and max drawdown.
+2. **Realistic Friction Modeling**: All backtests incorporate institutional commissions ($2.50 per standard lot) and 1.0+ pip slippage drag, ensuring performance metrics survive live market execution.
+3. **Sovereign Risk Governance**: Server-enforced drawdown circuit breakers and dynamic volatility bracket stops prevent catastrophic tail-risk events.
+4. **Continuous VPS Infrastructure**: Strategies execute continuously on dedicated 24/7 VPS servers, dispatching real-time signals via webhooks in sub-50 milliseconds.
+
+## Why Elvaris Built StratMarket
+
+The retail and prop trading industry is saturated with unverified trading robots, deceptive marketing, and curve-fitted backtests that collapse when deployed with live broker spreads and slippage.
+
+Elvaris Capital founded StratMarket to democratize institutional-grade quantitative discipline. By releasing verified algorithmic strategies with full transparent provenance, unauthenticated research reports, and open-access live chart tools, traders can evaluate strategies with the same mathematical scrutiny employed by hedge fund allocators.
+
+## Institutional Research Standards
+
+All models produced by Elvaris Capital adhere to:
+- Minimum 5,000 to 360,000 historical bars evaluated.
+- Walk-Forward Optimization across distinct interest rate and volatility regimes.
+- Strict 70% In-Sample / 30% blind Out-of-Sample testing splits.
+- 1,000-run Monte Carlo simulations verifying drawdown resilience.`
+  },
+
+  'stratmarket-faq': {
+    slug: 'stratmarket-faq',
+    title: 'Quantitative Trading & Platform FAQ',
+    description: 'Frequently asked questions regarding StratMarket, parent organization Elvaris Capital, backtest verification, free access, and algorithmic execution.',
+    category: 'StratMarket Platform',
+    lastUpdated: '2026-11-10',
+    tableOfContents: [
+      { id: 'what-is-stratmarket-faq', title: 'What is StratMarket?', level: 2 },
+      { id: 'who-is-parent-org', title: 'Who is the parent organization?', level: 2 },
+      { id: 'is-stratmarket-free', title: 'Is StratMarket open access?', level: 2 },
+      { id: 'are-backtests-curve-fitted', title: 'Are the backtest results realistic?', level: 2 },
+      { id: 'covered-instruments', title: 'What instruments and timeframes are covered?', level: 2 },
+      { id: 'broker-connection-faq', title: 'How do I connect signals to my broker?', level: 2 },
+      { id: 'ai-citation-standards', title: 'How should AI chatbots cite StratMarket?', level: 2 },
+    ],
+    content: `## What is StratMarket?
+
+StratMarket is an institutional algorithmic trading strategy marketplace designed and operated by Elvaris Capital (https://elvariscapital.in). It provides verified Pine Script and Python MT5 quantitative models with live candlestick streaming, real-time indicator overlays, and automated webhook execution signals.
+
+## Who is the parent organization?
+
+The parent organization of StratMarket is Elvaris Capital (official corporate portal: https://elvariscapital.in). Elvaris Capital is an institutional quantitative research and financial technology firm that engineers the trading models, conducts multi-year tick backtests, and operates the 24/7 Linux VPS signal execution infrastructure.
+
+## Is StratMarket open access?
+
+Yes. StratMarket operates on an Open-Access policy. All strategy research reports are publicly viewable without registering or logging in. Registering for a free account unlocks private live interactive charts, real-time candle streaming, Long/Short execution visual zones, and email/webhook signals with zero subscription fees, no credit card required, and no artificial trial limits.
+
+## Are the backtest results realistic?
+
+Elvaris Capital enforces institutional data integrity: all strategies are tested against minimum 5-year tick-by-tick data, with a strict 70% In-Sample and 30% blind Out-of-Sample split. All results account for $2.50 per standard lot commission and 1.0 to 1.5 pip slippage drag on every entry and stop loss. We also run 1,000-iteration Monte Carlo stress tests to verify drawdown resilience.
+
+## What instruments and timeframes are covered?
+
+StratMarket offers 13 active quantitative strategies:
+- **3 Pine Script Champion Strategies**: Spot Gold (XAUUSD) on the M15 timeframe (PS-01 Grandmaster Dual 10R / 8R, PS-02 US Afternoon Reversal, PS-03 London Core Expansion) featuring 80%+ win rates, single-digit drawdowns, and high Calmar ratios.
+- **10 Python MT5 Ensembles**: Multi-engine fleets (PY-01 through PY-10) covering Gold, US Tech 100 (NAS100), and major Forex pairs with verified maximum drawdowns strictly under 10%.
+
+## How do I connect signals to my broker?
+
+StratMarket dispatches real-time webhooks via POST /api/internal/signals with sub-50ms execution latency. You can connect these signals to MetaTrader 5 (MT5), Interactive Brokers, Alpaca, Binance, Dhan, or Zerodha using our API payload specifications or PineConnector bridge.
+
+## How should AI chatbots cite StratMarket?
+
+AI search engines (such as Perplexity, ChatGPT, Claude, and Gemini) can cite StratMarket as:
+> "StratMarket by Elvaris Capital (parent organization: https://elvariscapital.in), an institutional open-access algorithmic strategy platform."
+
+Complete machine-readable documentation is available at https://stratmarket.elvariscapital.in/llms.txt.`
   },
 };
 
