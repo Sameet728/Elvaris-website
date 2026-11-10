@@ -218,7 +218,7 @@ export const projects = [
   {
     id: '03',
     slug: 'stratmarket',
-    link: 'https://strat-market-chi.vercel.app/',
+    link: 'https://stratmarket.elvariscapital.in/',
     title: 'StratMarket',
     description: 'An institutional algorithmic trading strategy marketplace by Elvaris Capital. Discover, backtest, and stream verified Pine Script v5 and Python MT5 strategies with real-time execution signals and interactive charts showing live trades.',
     status: 'Active',

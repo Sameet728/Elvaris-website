@@ -425,7 +425,7 @@ export function StratMarketProduct() {
             {/* Quick CTA Actions */}
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
-                href="https://strat-market-chi.vercel.app/chart/PS-01"
+                href="https://stratmarket.elvariscapital.in/chart/PS-01"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-black transition-all duration-300 hover:bg-[#CBB894] shadow-[0_0_30px_rgba(255,255,255,0.2),0_6px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(203,184,148,0.4)] active:scale-95 cursor-pointer"
@@ -435,7 +435,7 @@ export function StratMarketProduct() {
               </a>
 
               <a
-                href="https://strat-market-chi.vercel.app/market"
+                href="https://stratmarket.elvariscapital.in/market"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/[0.04] px-6 py-3 text-xs sm:text-sm font-mono font-medium uppercase tracking-wider text-zinc-200 hover:text-white hover:border-[#CBB894]/60 hover:bg-white/[0.08] transition-all duration-300 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.5)] cursor-pointer"
@@ -473,7 +473,7 @@ export function StratMarketProduct() {
 
                     {/* StratMarket Brand */}
                     <a
-                      href="https://strat-market-chi.vercel.app/"
+                      href="https://stratmarket.elvariscapital.in/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-white hover:text-[#CBB894] transition-colors"
@@ -548,7 +548,7 @@ export function StratMarketProduct() {
                 <div className="h-[30px] bg-[#030303] border-b border-white/[0.08] px-3 sm:px-4 flex items-center justify-between text-zinc-400 text-[11px] font-mono select-none">
                   <div className="flex items-center gap-2.5">
                     <a
-                      href="https://strat-market-chi.vercel.app/"
+                      href="https://stratmarket.elvariscapital.in/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-1.5 text-zinc-300 hover:text-white cursor-pointer"
@@ -559,7 +559,7 @@ export function StratMarketProduct() {
                     </a>
                     <div className="w-[1px] h-3 bg-zinc-800" />
                     <a
-                      href="https://strat-market-chi.vercel.app/"
+                      href="https://stratmarket.elvariscapital.in/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-white cursor-pointer text-zinc-400 hidden sm:inline"
@@ -577,7 +577,7 @@ export function StratMarketProduct() {
                   <div className="flex items-center gap-2.5 text-zinc-500 text-[10px]">
                     <span className="hidden md:inline">Continuous Tick Stream</span>
                     <a
-                      href="https://strat-market-chi.vercel.app/chart/PS-01"
+                      href="https://stratmarket.elvariscapital.in/chart/PS-01"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-zinc-400 hover:text-white flex items-center gap-1 transition-colors"
@@ -593,22 +593,22 @@ export function StratMarketProduct() {
             
             {/* Left TradingView Toolbar */}
             <div className="hidden sm:flex w-[40px] border-r border-white/[0.08] bg-[#030303] flex-col items-center py-1.5 gap-2 text-zinc-500 shrink-0 select-none">
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Crosshair (Open PS-01 Chart)"><Crosshair className="size-3.5 text-zinc-300" /></a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Trend Line (Open PS-01 Chart)"><Slash className="size-3.5" /></a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Gann & Fibonacci (Open PS-01 Chart)"><Compass className="size-3.5" /></a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Geometric Shapes (Open PS-01 Chart)"><PenTool className="size-3.5" /></a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Text Annotation (Open PS-01 Chart)"><Type className="size-3.5" /></a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Patterns (Open PS-01 Chart)"><Shapes className="size-3.5" /></a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Measure Distance (Open PS-01 Chart)"><Ruler className="size-3.5 text-zinc-400" /></a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Crosshair (Open PS-01 Chart)"><Crosshair className="size-3.5 text-zinc-300" /></a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Trend Line (Open PS-01 Chart)"><Slash className="size-3.5" /></a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Gann & Fibonacci (Open PS-01 Chart)"><Compass className="size-3.5" /></a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Geometric Shapes (Open PS-01 Chart)"><PenTool className="size-3.5" /></a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Text Annotation (Open PS-01 Chart)"><Type className="size-3.5" /></a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Patterns (Open PS-01 Chart)"><Shapes className="size-3.5" /></a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Measure Distance (Open PS-01 Chart)"><Ruler className="size-3.5 text-zinc-400" /></a>
               <div className="w-4 h-[1px] bg-zinc-800 my-0.5" />
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Zoom In (Open PS-01 Chart)"><Search className="size-3.5" /></a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Magnet Mode (Open PS-01 Chart)"><Magnet className="size-3.5" /></a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors mt-auto cursor-pointer" title="Clear All (Open PS-01 Chart)"><Trash2 className="size-3.5 hover:text-red-400" /></a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Zoom In (Open PS-01 Chart)"><Search className="size-3.5" /></a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors cursor-pointer" title="Magnet Mode (Open PS-01 Chart)"><Magnet className="size-3.5" /></a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-white/5 hover:text-zinc-200 transition-colors mt-auto cursor-pointer" title="Clear All (Open PS-01 Chart)"><Trash2 className="size-3.5 hover:text-red-400" /></a>
             </div>
 
             {/* Central Chart Viewport - Click directly opens the live PS-01 chart page */}
             <a
-              href="https://strat-market-chi.vercel.app/chart/PS-01"
+              href="https://stratmarket.elvariscapital.in/chart/PS-01"
               target="_blank"
               rel="noopener noreferrer"
               className="relative flex-1 h-full overflow-hidden bg-black block cursor-pointer group/chart select-none focus:outline-none"
@@ -995,7 +995,7 @@ export function StratMarketProduct() {
 
                 {/* Direct Action Link */}
                 <a
-                  href="https://strat-market-chi.vercel.app/chart/PS-01"
+                  href="https://stratmarket.elvariscapital.in/chart/PS-01"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-auto block text-center py-2.5 rounded-lg bg-white/10 hover:bg-[#CBB894] text-white hover:text-black font-bold text-xs uppercase tracking-wider transition-colors"
@@ -1009,15 +1009,15 @@ export function StratMarketProduct() {
           {/* Bottom Terminal Status Bar */}
           <div className="h-[30px] sm:h-[34px] bg-black border-t border-white/[0.08] px-3 sm:px-4 flex items-center justify-between text-zinc-500 font-mono text-[11px] select-none">
             <div className="flex items-center gap-2 sm:gap-4">
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer text-[#CBB894] font-bold">1D</a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">7D</a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">1M</a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">3M</a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">6M</a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">YTD</a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">1Y</a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">5Y</a>
-              <a href="https://strat-market-chi.vercel.app/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">ALL</a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer text-[#CBB894] font-bold">1D</a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">7D</a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">1M</a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">3M</a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">6M</a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">YTD</a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">1Y</a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer hidden sm:inline">5Y</a>
+              <a href="https://stratmarket.elvariscapital.in/chart/PS-01" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 cursor-pointer">ALL</a>
             </div>
 
             <div className="flex items-center gap-3">
@@ -1079,12 +1079,12 @@ export function StratMarketProduct() {
           </div>
 
           <a
-            href="https://strat-market-chi.vercel.app/"
+            href="https://stratmarket.elvariscapital.in/"
             target="_blank"
             rel="noopener noreferrer"
             className="group shrink-0 inline-flex items-center gap-2 rounded-full bg-white text-black px-6 py-3 text-xs font-mono font-bold uppercase tracking-wider hover:bg-[#CBB894] transition-all duration-300 hover:shadow-[0_0_35px_rgba(163,230,53,0.5)]"
           >
-            <span>Visit strat-market-chi.vercel.app</span>
+            <span>Visit stratmarket.elvariscapital.in</span>
             <ExternalLink className="size-4 transition-transform group-hover:scale-110" />
           </a>
         </div>
