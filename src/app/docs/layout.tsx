@@ -10,7 +10,7 @@ export default function DocsLayout({
   return (
     <div className="bg-background text-foreground min-h-screen flex flex-col selection:bg-white selection:text-black">
       <Navbar />
-      
+
       <main className="flex-1 relative">
         {/* Ambient background glow */}
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[700px] h-[700px] bg-white/[0.02] rounded-full blur-[120px] pointer-events-none" />

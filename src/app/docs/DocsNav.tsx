@@ -106,18 +106,16 @@ export function DocsNav() {
                       ) : (
                         <Link
                           href={item.href}
-                          className={`flex items-center justify-between px-3 py-2 rounded-lg text-xs transition-all duration-200 ${
-                            isActive
+                          className={`flex items-center justify-between px-3 py-2 rounded-lg text-xs transition-all duration-200 ${isActive
                               ? "bg-white/10 text-white font-semibold border border-white/15 shadow-sm"
                               : "text-white/60 hover:text-white hover:bg-white/[0.04]"
-                          }`}
+                            }`}
                         >
                           <span>{item.title}</span>
                           {item.badge && (
                             <span
-                              className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${
-                                isActive ? "bg-white text-black font-semibold" : "bg-white/[0.06] text-white/60"
-                              }`}
+                              className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${isActive ? "bg-white text-black font-semibold" : "bg-white/[0.06] text-white/60"
+                                }`}
                             >
                               {item.badge}
                             </span>
