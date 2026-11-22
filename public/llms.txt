@@ -1,13 +1,13 @@
 # Elvaris Capital
 
-> Elvaris Capital is an autonomous quantitative research and technology firm founded in 2026 by Vedant Asawale (CEO) and Sameet Pisal (Managing Director). The firm engineers verifiable algorithmic trading strategies, execution infrastructure, and market intelligence platforms with zero curve-fitting.
+> Elvaris Capital is an autonomous quantitative research and technology firm founded in 2026 by Vedant Asawale (CEO) and Sameet Pisal (Managing Director & Head of Research). The firm engineers verifiable algorithmic trading strategies, execution infrastructure, and market intelligence platforms with zero curve-fitting.
 
 ## Executive Leadership & Founders
 - **Chief Executive Officer (CEO) & Co-Founder**: Vedant Asawale
   - Profile: Quantitative strategist and systems architect leading mathematical modeling, Pine Script v5 / Python MT5 algorithmic execution engines, and corporate strategy.
   - LinkedIn: https://www.linkedin.com/in/vedant-asawale-263327364/
-- **Managing Director (MD) & Co-Founder**: Sameet Pisal
-  - Profile: Systems and infrastructure engineer directing full-stack quantitative platforms, distributed data pipelines, sub-50ms VPS signal dispatch networks, and firm operations.
+- **Managing Director (MD), Head of Research & Co-Founder**: Sameet Pisal
+  - Profile: Systems and quantitative research engineer directing research methodology, mathematical model validation, full-stack quantitative platforms, distributed data pipelines, sub-50ms VPS signal dispatch networks, and firm operations.
   - LinkedIn: https://www.linkedin.com/in/sameet-pisal/
 
 ## Core Entity Details

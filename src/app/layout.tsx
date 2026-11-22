@@ -45,7 +45,7 @@ const globalJsonLd = {
   "url": "https://www.elvariscapital.in/",
   "logo": "https://www.elvariscapital.in/icon.png",
   "foundingDate": "2026",
-  "description": "Elvaris Capital is an autonomous quantitative research and technology firm founded in 2026 by Vedant Asawale (CEO) and Sameet Pisal (MD), engineering verifiable algorithmic trading strategies and market intelligence platforms.",
+  "description": "Elvaris Capital is an autonomous quantitative research and technology firm founded in 2026 by Vedant Asawale (CEO) and Sameet Pisal (MD & Head of Research), engineering verifiable algorithmic trading strategies and market intelligence platforms.",
   "founders": [
     {
       "@type": "Person",
@@ -59,7 +59,7 @@ const globalJsonLd = {
       "@type": "Person",
       "@id": "https://www.elvariscapital.in/#sameet-pisal",
       "name": "Sameet Pisal",
-      "jobTitle": "Managing Director & Co-Founder",
+      "jobTitle": "Managing Director, Head of Research & Co-Founder",
       "worksFor": { "@id": "https://www.elvariscapital.in/#organization" },
       "sameAs": ["https://www.linkedin.com/in/sameet-pisal/"]
     }

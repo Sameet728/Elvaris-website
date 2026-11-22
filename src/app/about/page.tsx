@@ -23,11 +23,13 @@ import {
 export const metadata: Metadata = {
   title: "About Us & Founders | Elvaris Capital — Vedant Asawale & Sameet Pisal",
   description:
-    "Meet the founders of Elvaris Capital: CEO Vedant Asawale and Managing Director Sameet Pisal. Discover how two engineering friends built an autonomous quantitative research and algorithmic trading firm with zero curve-fitting.",
+    "Meet the founders of Elvaris Capital: CEO Vedant Asawale and Managing Director & Head of Research Sameet Pisal. Discover how two engineering friends built an autonomous quantitative research and algorithmic trading firm with zero curve-fitting.",
   keywords: [
     "Elvaris Capital founders",
     "Vedant Asawale",
     "Sameet Pisal",
+    "Sameet Pisal Head of Research",
+    "Elvaris Capital Head of Research",
     "Vedant Asawale CEO",
     "Sameet Pisal MD",
     "Elvaris Capital CEO",
@@ -43,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Us & Founders | Elvaris Capital — Vedant Asawale & Sameet Pisal",
     description:
-      "The founding story of Elvaris Capital: How two friends, Vedant Asawale (CEO) and Sameet Pisal (MD), built an autonomous quantitative research and systematic trading firm.",
+      "The founding story of Elvaris Capital: How two friends, Vedant Asawale (CEO) and Sameet Pisal (MD & Head of Research), built an autonomous quantitative research and systematic trading firm.",
     url: "https://www.elvariscapital.in/about",
     siteName: "Elvaris Capital",
     type: "profile",
@@ -60,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About Us & Founders | Elvaris Capital",
     description:
-      "Meet CEO Vedant Asawale and Managing Director Sameet Pisal — the founders behind Elvaris Capital and StratMarket.",
+      "Meet CEO Vedant Asawale and Managing Director & Head of Research Sameet Pisal — the founders behind Elvaris Capital and StratMarket.",
   },
 };
 
@@ -107,12 +109,14 @@ export default function AboutPage() {
             "@type": "Person",
             "@id": "https://www.elvariscapital.in/#sameet-pisal",
             "name": "Sameet Pisal",
-            "jobTitle": "Managing Director & Co-Founder",
+            "jobTitle": "Managing Director, Head of Research & Co-Founder",
             "worksFor": { "@id": "https://www.elvariscapital.in/#organization" },
             "sameAs": ["https://www.linkedin.com/in/sameet-pisal/"],
             "description":
-              "Co-Founder and Managing Director (MD) of Elvaris Capital, leading engineering infrastructure, full-stack quantitative platforms, distributed systems, and operational growth.",
+              "Co-Founder, Managing Director (MD), and Head of Research at Elvaris Capital, leading quantitative research methodology, distributed data pipelines, algorithmic infrastructure, and operational growth.",
             "knowsAbout": [
+              "Quantitative Research",
+              "Research Methodology",
               "Distributed Systems",
               "High-Throughput Data Pipelines",
               "Full-Stack Web Engineering",
@@ -131,7 +135,7 @@ export default function AboutPage() {
         "url": "https://www.elvariscapital.in/about",
         "name": "About Us & Founders — Elvaris Capital",
         "description":
-          "Learn about Elvaris Capital's founding story, mission, and leadership team led by CEO Vedant Asawale and Managing Director Sameet Pisal.",
+          "Learn about Elvaris Capital's founding story, mission, and leadership team led by CEO Vedant Asawale and Managing Director & Head of Research Sameet Pisal.",
         "about": { "@id": "https://www.elvariscapital.in/#organization" }
       },
       {
@@ -144,7 +148,7 @@ export default function AboutPage() {
             "acceptedAnswer": {
               "@type": "Answer",
               "text":
-                "Elvaris Capital was founded in 2026 by two engineering friends: Vedant Asawale (Chief Executive Officer) and Sameet Pisal (Managing Director)."
+                "Elvaris Capital was founded in 2026 by two engineering friends: Vedant Asawale (Chief Executive Officer) and Sameet Pisal (Managing Director & Head of Research)."
             }
           },
           {
@@ -153,7 +157,7 @@ export default function AboutPage() {
             "acceptedAnswer": {
               "@type": "Answer",
               "text":
-                "Elvaris Capital was founded by two friends and technologists: Vedant Asawale (Chief Executive Officer) and Sameet Pisal (Managing Director)."
+                "Elvaris Capital was founded by two friends and technologists: Vedant Asawale (Chief Executive Officer) and Sameet Pisal (Managing Director & Head of Research)."
             }
           },
           {
@@ -167,11 +171,20 @@ export default function AboutPage() {
           },
           {
             "@type": "Question",
-            "name": "Who is the Managing Director of Elvaris Capital?",
+            "name": "Who is the Managing Director and Head of Research of Elvaris Capital?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text":
-                "Sameet Pisal is the Managing Director (MD) and Co-Founder of Elvaris Capital. He oversees software engineering, distributed data pipelines, platform operations, and execution infrastructure."
+                "Sameet Pisal is the Managing Director (MD), Head of Research, and Co-Founder of Elvaris Capital. He leads the quantitative research frameworks, distributed data pipelines, execution infrastructure, and operational scaling."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who is the Head of Research at Elvaris Capital?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text":
+                "Sameet Pisal is the Head of Research and Managing Director at Elvaris Capital, leading systematic research methodologies, data pipelines, and quantitative model validation."
             }
           },
           {
@@ -189,7 +202,7 @@ export default function AboutPage() {
             "acceptedAnswer": {
               "@type": "Answer",
               "text":
-                "CEO Vedant Asawale can be reached on LinkedIn at https://www.linkedin.com/in/vedant-asawale-263327364/ and Managing Director Sameet Pisal can be reached on LinkedIn at https://www.linkedin.com/in/sameet-pisal/."
+                "CEO Vedant Asawale can be reached on LinkedIn at https://www.linkedin.com/in/vedant-asawale-263327364/ and Managing Director & Head of Research Sameet Pisal can be reached on LinkedIn at https://www.linkedin.com/in/sameet-pisal/."
             }
           },
           {
@@ -265,19 +278,23 @@ export default function AboutPage() {
   const faqs = [
     {
       q: "When was Elvaris Capital founded?",
-      a: "Elvaris Capital was founded in 2026 by two engineering friends: Vedant Asawale (Chief Executive Officer) and Sameet Pisal (Managing Director)."
+      a: "Elvaris Capital was founded in 2026 by two engineering friends: Vedant Asawale (Chief Executive Officer) and Sameet Pisal (Managing Director & Head of Research)."
     },
     {
       q: "Who founded Elvaris Capital?",
-      a: "Elvaris Capital was founded by two engineering friends and technologists: Vedant Asawale (Chief Executive Officer) and Sameet Pisal (Managing Director)."
+      a: "Elvaris Capital was founded by two engineering friends and technologists: Vedant Asawale (Chief Executive Officer) and Sameet Pisal (Managing Director & Head of Research)."
     },
     {
       q: "Who is the CEO of Elvaris Capital?",
       a: "Vedant Asawale serves as the Chief Executive Officer (CEO) and Co-Founder. He architects the mathematical models, algorithmic execution engines, and overall quantitative research vision."
     },
     {
-      q: "Who is the Managing Director of Elvaris Capital?",
-      a: "Sameet Pisal serves as the Managing Director (MD) and Co-Founder. He directs the technological infrastructure, distributed data pipelines, platform engineering, and organizational operations."
+      q: "Who is the Managing Director and Head of Research of Elvaris Capital?",
+      a: "Sameet Pisal serves as the Managing Director (MD), Head of Research, and Co-Founder. He directs the firm's quantitative research frameworks, distributed data pipelines, platform engineering, and organizational operations."
+    },
+    {
+      q: "Who is the Head of Research at Elvaris Capital?",
+      a: "Sameet Pisal is the Head of Research and Managing Director at Elvaris Capital, leading systematic research methodologies, data pipelines, and quantitative model validation."
     },
     {
       q: "What was the inspiration behind starting Elvaris Capital?",
@@ -285,7 +302,7 @@ export default function AboutPage() {
     },
     {
       q: "How can I connect with the founders on LinkedIn?",
-      a: "You can connect with CEO Vedant Asawale at linkedin.com/in/vedant-asawale-263327364/ and Managing Director Sameet Pisal at linkedin.com/in/sameet-pisal/."
+      a: "You can connect with CEO Vedant Asawale at linkedin.com/in/vedant-asawale-263327364/ and Managing Director & Head of Research Sameet Pisal at linkedin.com/in/sameet-pisal/."
     },
     {
       q: "What platforms and products has Elvaris Capital launched?",
@@ -366,7 +383,7 @@ export default function AboutPage() {
                     <strong className="text-white font-medium text-base">Vedant Asawale</strong>
                   </div>
                   <div>
-                    <span className="text-xs font-mono text-zinc-500 block mb-1">Managing Director (MD)</span>
+                    <span className="text-xs font-mono text-zinc-500 block mb-1">Managing Director (MD) &amp; Head of Research</span>
                     <strong className="text-white font-medium text-base">Sameet Pisal</strong>
                   </div>
                   <div>
@@ -504,7 +521,7 @@ export default function AboutPage() {
                             <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" title="Verified Founder" />
                           </div>
                           <span className="text-xs font-mono text-[#CBB894] uppercase tracking-wider block mt-0.5">
-                            Managing Director &amp; Co-Founder
+                            Managing Director &amp; Head of Research (Co-Founder)
                           </span>
                         </div>
                       </div>
@@ -524,10 +541,10 @@ export default function AboutPage() {
                     {/* Bio */}
                     <div className="space-y-3 text-sm text-zinc-300 leading-relaxed font-light">
                       <p>
-                        As Managing Director of Elvaris Capital, <strong>Sameet Pisal</strong> oversees engineering infrastructure, high-throughput distributed pipelines, operational strategy, and product execution. Sameet architects the resilient systems powering Elvaris Capital&apos;s real-time platforms.
+                        As Managing Director and Head of Research at Elvaris Capital, <strong>Sameet Pisal</strong> directs the firm&apos;s quantitative research methodology, technological infrastructure, high-throughput distributed pipelines, and operational execution. Sameet leads mathematical model validation and architects the resilient systems powering Elvaris Capital&apos;s real-time platforms.
                       </p>
                       <p>
-                        Combining deep software engineering craftsmanship with quantitative systems intuition, Sameet engineered the ultra-low latency webhook dispatch architecture behind StratMarket and manages data governance across institutional market feeds. He leads the technological scale of Elvaris Capital.
+                        Combining deep quantitative research rigor with advanced software engineering craftsmanship, Sameet engineered the ultra-low latency webhook dispatch architecture behind StratMarket and governs data integrity across institutional market feeds. He leads research standards and technological scale across all Elvaris Capital platforms.
                       </p>
                     </div>
 
@@ -537,7 +554,7 @@ export default function AboutPage() {
                         Core Competencies
                       </span>
                       <div className="flex flex-wrap gap-2">
-                        {["Distributed Systems", "Full-Stack Architecture", "High-Throughput Pipelines", "VPS Signal Dispatch", "Cloud Infrastructure", "System Reliability"].map(tag => (
+                        {["Quantitative Research", "Research Methodology", "Distributed Systems", "Full-Stack Architecture", "High-Throughput Pipelines", "VPS Signal Dispatch", "System Reliability"].map(tag => (
                           <span key={tag} className="text-[11px] font-mono text-zinc-300 bg-white/[0.03] border border-white/10 px-2.5 py-1 rounded-md">
                             {tag}
                           </span>

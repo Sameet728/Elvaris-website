@@ -29,12 +29,13 @@
   - Fierce advocate of aerospace-grade testing standards for systematic finance, enforcing 30% out-of-sample holdout testing and Monte Carlo reshuffling.
 - **Quote**: "Financial markets are noisy, but genuine mathematical edges exist when you refuse to curve-fit to historical hindsight."
 
-### Sameet Pisal — Managing Director (MD) & Co-Founder
+### Sameet Pisal — Managing Director (MD), Head of Research & Co-Founder
 - **Name**: Sameet Pisal
-- **Title**: Managing Director & Co-Founder
+- **Title**: Managing Director, Head of Research & Co-Founder
 - **LinkedIn**: https://www.linkedin.com/in/sameet-pisal/
 - **Role & Responsibilities**:
-  - Directs technological infrastructure, distributed data pipelines, platform engineering, and operational growth.
+  - Directs quantitative research methodologies, research validation standards, and technological infrastructure.
+  - Oversees distributed data pipelines, quantitative platform engineering, and operational growth.
   - Architected the ultra-low latency webhook dispatch network powering StratMarket, enabling sub-50ms VPS signal execution to TradingView, MetaTrader 5, and institutional FIX endpoints.
   - Leads full-stack web platforms, data governance, API integration, and system reliability engineering across tick-level market feeds.
 - **Quote**: "A quantitative algorithm is only as dependable as the infrastructure executing it. We engineer for tick-level precision and faultless resilience."
