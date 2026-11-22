@@ -1,6 +1,7 @@
 import { Navbar } from "../../components/navbar";
 import { Footer } from "../../components/footer";
 import { FadeIn } from "../../components/fade-in";
+import { StratMarketProduct } from "../../components/StratMarketProduct";
 import Link from "next/link";
 import { projects } from "../../data/content";
 
@@ -78,6 +79,24 @@ export default function ProductPage() {
                   </Link>
                 </FadeIn>
               )})}
+            </div>
+
+            {/* Featured Live Flagship Product Showcase: StratMarket */}
+            <div className="pt-16 border-t border-white/[0.08]">
+              <FadeIn>
+                <div className="mb-8 space-y-2">
+                  <span className="text-[11px] font-mono text-[#CBB894] uppercase tracking-widest">
+                    FLAGSHIP LIVE PRODUCT // PS-01 TERMINAL
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl font-medium text-fg-100 tracking-tight">
+                    StratMarket Interactive Algorithmic Terminal
+                  </h2>
+                  <p className="text-sm text-fg-300 max-w-2xl leading-relaxed">
+                    Explore live verified Pine Script v5 and Python MT5 execution strategies with tick-level audited performance, candlestick charts, and continuous signal stream.
+                  </p>
+                </div>
+              </FadeIn>
+              <StratMarketProduct />
             </div>
           </div>
         </section>

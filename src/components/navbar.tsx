@@ -10,6 +10,7 @@ const mainLinks = [
   { name: "Product", href: "/product" },
   { name: "Insights", href: "/insights" },
   { name: "Documentation", href: "/documentation" },
+  { name: "About", href: "/about" },
   { name: "Careers", href: "/careers" },
   { name: "Contact", href: "/contact" },
 ];

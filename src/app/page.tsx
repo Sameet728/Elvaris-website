@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import { Navbar } from "../components/navbar";
-import { StratMarketProduct } from "../components/StratMarketProduct";
 import { Footer } from "../components/footer";
 
 export default function HomePage() {
@@ -270,11 +270,6 @@ export default function HomePage() {
         <Navbar />
       </div>
 
-      {/* STRATMARKET PROMOTION & LIVE CHART AT THE VERY TOP */}
-      <div className="relative z-20">
-        <StratMarketProduct />
-      </div>
-
       {/* UNDERLYING QUANTITATIVE RESEARCH SYSTEM */}
       <main id="track" className="relative">
         <div id="research-pipeline" className="absolute -top-20" />
@@ -294,8 +289,9 @@ export default function HomePage() {
         <h2>Validated research in live markets.</h2>
         <p>Quantitative models that survive our 6-stage validation pipeline are deployed to our institutional strategy marketplace with real-time execution signals and tick-level performance verification.</p>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '24px' }}>
-          <a className="btn" href="#stratmarket" style={{ borderColor: '#CBB894', color: '#CBB894' }}>Back to StratMarket Chart ↑</a>
+          <Link className="btn" href="/product" style={{ borderColor: '#CBB894', color: '#CBB894' }}>Explore Products &amp; StratMarket →</Link>
           <a className="btn" href="https://stratmarket.elvariscapital.in/" target="_blank" rel="noopener noreferrer">Launch Marketplace Platform ↗</a>
+          <Link className="btn" href="/about">About Us &amp; Founders →</Link>
         </div>
       </section>
 

@@ -16,7 +16,7 @@ const footerLinks = {
     { name: "Glossary", href: "/documentation/sharpe-ratio" },
   ],
   Company: [
-    { name: "About", href: "/about" },
+    { name: "About Us & Founders", href: "/about" },
     { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
   ],
