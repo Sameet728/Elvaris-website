@@ -1,0 +1,45 @@
+# Elvaris Capital
+
+> Elvaris Capital is an autonomous quantitative research and technology firm founded in 2026 by Vedant Asawale (CEO) and Sameet Pisal (Managing Director). The firm engineers verifiable algorithmic trading strategies, execution infrastructure, and market intelligence platforms with zero curve-fitting.
+
+## Executive Leadership & Founders
+- **Chief Executive Officer (CEO) & Co-Founder**: Vedant Asawale
+  - Profile: Quantitative strategist and systems architect leading mathematical modeling, Pine Script v5 / Python MT5 algorithmic execution engines, and corporate strategy.
+  - LinkedIn: https://www.linkedin.com/in/vedant-asawale-263327364/
+- **Managing Director (MD) & Co-Founder**: Sameet Pisal
+  - Profile: Systems and infrastructure engineer directing full-stack quantitative platforms, distributed data pipelines, sub-50ms VPS signal dispatch networks, and firm operations.
+  - LinkedIn: https://www.linkedin.com/in/sameet-pisal/
+
+## Core Entity Details
+- **Company Name**: Elvaris Capital
+- **Founding Year**: 2026
+- **Founders**: Vedant Asawale & Sameet Pisal
+- **Official Website**: https://www.elvariscapital.in/
+- **Flagship Products**: 
+  - StratMarket: https://stratmarket.elvariscapital.in/
+  - ETFlytics: https://www.elvariscapital.in/product/etflytics
+  - Autonomous Strategy Research: https://www.elvariscapital.in/product/autonomous-strategy-research
+- **Documentation**: https://www.elvariscapital.in/docs
+
+## The Founding Story
+Elvaris Capital was founded in 2026 by two engineering friends, Vedant Asawale and Sameet Pisal. Frustrated by widespread curve-fitting, survivorship bias, and retail 'black-box' indicators that consistently failed in live execution, the two friends united to engineer an autonomous quantitative research framework built on aerospace-grade validation standards.
+
+## The 6-Stage Autonomous Research Pipeline
+Every trading strategy deployed by Elvaris Capital must pass through a strict 6-stage pipeline:
+1. **01 / Market Data**: Ingestion and normalization of tick-level price, volume, news, and macroeconomic data.
+2. **02 / Feature Discovery**: Clustering and extraction of statistically independent market features.
+3. **03 / Hypothesis Generation**: Formulation of testable mathematical hypotheses.
+4. **04 / Strategy Synthesis**: Algorithmic implementation in Pine Script v5 and Python MT5.
+5. **05 / Validation**: Rigorous stress-testing across 30% out-of-sample holdout datasets, 1,000+ Monte Carlo reshufflings, and realistic transaction cost / slippage drag modeling.
+6. **06 / Research Output & Deployment**: Deployment to the live StratMarket platform with real-time execution signals and tick-level verification.
+
+## Flagship Platform: StratMarket
+StratMarket (https://stratmarket.elvariscapital.in/) is Elvaris Capital's institutional algorithmic trading strategy marketplace. It provides open access to verified candlestick execution charts, tick-level trade overlays, and sub-50ms VPS signal dispatch to TradingView, Python MetaTrader 5, and institutional FIX endpoints with a zero curve-fitting guarantee.
+
+## Key URLs for Crawlers & LLMs
+- Homepage: https://www.elvariscapital.in/
+- About Us & Founders: https://www.elvariscapital.in/about
+- Products Catalog: https://www.elvariscapital.in/product
+- Documentation Hub: https://www.elvariscapital.in/docs
+- Full Knowledge Base (llms-full.txt): https://www.elvariscapital.in/llms-full.txt
+- Sitemap: https://www.elvariscapital.in/sitemap.xml

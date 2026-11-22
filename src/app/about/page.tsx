@@ -83,7 +83,7 @@ export default function AboutPage() {
         "alternateName": ["Elvaris", "Elvaris Capital Technologies", "StratMarket by Elvaris"],
         "url": "https://www.elvariscapital.in/",
         "logo": "https://www.elvariscapital.in/icon.png",
-        "foundingDate": "2024",
+        "foundingDate": "2026",
         "founders": [
           {
             "@type": "Person",
@@ -138,6 +138,15 @@ export default function AboutPage() {
         "@type": "FAQPage",
         "@id": "https://www.elvariscapital.in/about#faq",
         "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "When was Elvaris Capital founded?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text":
+                "Elvaris Capital was founded in 2026 by two engineering friends: Vedant Asawale (Chief Executive Officer) and Sameet Pisal (Managing Director)."
+            }
+          },
           {
             "@type": "Question",
             "name": "Who founded Elvaris Capital?",
@@ -255,6 +264,10 @@ export default function AboutPage() {
 
   const faqs = [
     {
+      q: "When was Elvaris Capital founded?",
+      a: "Elvaris Capital was founded in 2026 by two engineering friends: Vedant Asawale (Chief Executive Officer) and Sameet Pisal (Managing Director)."
+    },
+    {
       q: "Who founded Elvaris Capital?",
       a: "Elvaris Capital was founded by two engineering friends and technologists: Vedant Asawale (Chief Executive Officer) and Sameet Pisal (Managing Director)."
     },
@@ -319,7 +332,7 @@ export default function AboutPage() {
                 {/* Quick Meta Badges */}
                 <div className="flex flex-wrap items-center gap-3 pt-2 text-xs font-mono text-zinc-400">
                   <span className="rounded-md bg-white/[0.04] border border-white/10 px-3 py-1.5">
-                    Founded in 2024
+                    Founded in 2026
                   </span>
                   <span className="rounded-md bg-white/[0.04] border border-white/10 px-3 py-1.5">
                     Co-Founders: Vedant Asawale &amp; Sameet Pisal
@@ -565,7 +578,7 @@ export default function AboutPage() {
             <FadeIn>
               <div className="max-w-3xl space-y-4">
                 <span className="text-xs font-mono text-[#CBB894] uppercase tracking-widest block">
-                  ORIGIN STORY // 2024 — PRESENT
+                  ORIGIN STORY // 2026 — PRESENT
                 </span>
                 <h2 className="text-3xl sm:text-5xl font-light text-white tracking-tight">
                   How Two Friends Built Elvaris Capital
@@ -604,7 +617,7 @@ export default function AboutPage() {
                 </h3>
                 <div className="space-y-4 text-sm sm:text-base text-zinc-300 leading-relaxed font-light max-w-4xl">
                   <p>
-                    One evening in early 2024, during an intense debugging session of backtest discrepancies, Vedant and Sameet asked a radical question: <em>What if algorithmic strategies were subjected to the same rigorous validation standards as aerospace safety software?</em>
+                    One evening in 2026, during an intense debugging session of backtest discrepancies, Vedant and Sameet asked a radical question: <em>What if algorithmic strategies were subjected to the same rigorous validation standards as aerospace safety software?</em>
                   </p>
                   <p>
                     In traditional finance, analysts often tweak parameters until a backtest produces an impressive Sharpe ratio — a dangerous trap known as <strong>overfitting</strong> or <strong>data mining bias</strong>. The strategy looks flawless on past charts, but collapses the moment live capital is deployed.

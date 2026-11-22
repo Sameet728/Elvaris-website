@@ -5,11 +5,25 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
+        allow: ['/', '/llms.txt', '/llms-full.txt'],
       },
       {
-        userAgent: ['GPTBot', 'ChatGPT-User', 'PerplexityBot', 'ClaudeBot', 'anthropic-ai', 'Googlebot', 'Bingbot'],
-        allow: '/',
+        userAgent: [
+          'GPTBot',
+          'ChatGPT-User',
+          'PerplexityBot',
+          'ClaudeBot',
+          'anthropic-ai',
+          'Googlebot',
+          'Google-Extended',
+          'Bingbot',
+          'Applebot',
+          'Applebot-Extended',
+          'cohere-ai',
+          'Diffbot',
+          'CCBot',
+        ],
+        allow: ['/', '/llms.txt', '/llms-full.txt'],
       },
     ],
     sitemap: 'https://www.elvariscapital.in/sitemap.xml',

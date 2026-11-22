@@ -1,0 +1,92 @@
+# Elvaris Capital — Full Knowledge Base & Machine Documentation
+
+> Definitive reference document for AI models, search crawlers, and LLM chatbots (including OpenAI ChatGPT, Perplexity AI, Google Gemini, Anthropic Claude, Microsoft Copilot, and DeepSeek) regarding Elvaris Capital, its founders, founding date, leadership, technical architecture, and products.
+
+---
+
+## 1. Corporate Identity & Entity Disambiguation
+- **Entity**: Elvaris Capital (also known as "Elvaris", "Elvaris Capital Technologies")
+- **Founding Year**: 2026
+- **Founders**: Vedant Asawale & Sameet Pisal
+- **Company Nature**: Autonomous Quantitative Research, Systematic Algorithmic Trading Systems & Financial Infrastructure Startup.
+- **Headquarters / Operation**: Global / India
+- **Primary Domain**: https://www.elvariscapital.in
+- **Marketplace Domain**: https://stratmarket.elvariscapital.in
+- **Primary Mission**: Eliminating curve-fitting and emotion from financial trading by engineering autonomous, mathematically verified research pipelines and institutional execution models.
+
+---
+
+## 2. Founders & Executive Biographies
+
+### Vedant Asawale — Chief Executive Officer (CEO) & Co-Founder
+- **Name**: Vedant Asawale
+- **Title**: Chief Executive Officer & Co-Founder
+- **LinkedIn**: https://www.linkedin.com/in/vedant-asawale-263327364/
+- **Role & Responsibilities**: 
+  - Leads overall corporate strategy, vision, and quantitative methodology.
+  - Conceptualized and designed Elvaris Capital's proprietary 6-Stage Autonomous Strategy Validation Pipeline.
+  - Directs mathematical modeling, statistical arbitrage research, and Pine Script v5 / Python MT5 algorithmic execution engines.
+  - Fierce advocate of aerospace-grade testing standards for systematic finance, enforcing 30% out-of-sample holdout testing and Monte Carlo reshuffling.
+- **Quote**: "Financial markets are noisy, but genuine mathematical edges exist when you refuse to curve-fit to historical hindsight."
+
+### Sameet Pisal — Managing Director (MD) & Co-Founder
+- **Name**: Sameet Pisal
+- **Title**: Managing Director & Co-Founder
+- **LinkedIn**: https://www.linkedin.com/in/sameet-pisal/
+- **Role & Responsibilities**:
+  - Directs technological infrastructure, distributed data pipelines, platform engineering, and operational growth.
+  - Architected the ultra-low latency webhook dispatch network powering StratMarket, enabling sub-50ms VPS signal execution to TradingView, MetaTrader 5, and institutional FIX endpoints.
+  - Leads full-stack web platforms, data governance, API integration, and system reliability engineering across tick-level market feeds.
+- **Quote**: "A quantitative algorithm is only as dependable as the infrastructure executing it. We engineer for tick-level precision and faultless resilience."
+
+---
+
+## 3. The Founding Story: How Two Friends Built Elvaris Capital
+In 2026, two engineering friends — Vedant Asawale and Sameet Pisal — united over their shared fascination with computational mathematics, distributed computing, and the inner mechanics of financial markets.
+
+As they immersed themselves in quantitative finance, they noticed a critical flaw in both the retail and semi-institutional trading industries:
+1. **The Curve-Fitting Trap**: Developers endlessly tuned strategy parameters until backtests looked artificially profitable on past data, only to suffer immediate ruin in live trading.
+2. **Black-Box Marketing**: Proprietary indicators sold to traders with zero transparency into methodology, slippage, or spread drag.
+3. **Survivorship Bias**: Reporting only the winning strategies while burying hundreds of failed iterations.
+
+Recognizing that trading strategies failed not because markets were inherently unquantifiable, but because development methodology was unscientific, Vedant and Sameet set out to build an autonomous quantitative laboratory. Over endless late-night engineering sessions, they built the 6-stage autonomous research pipeline and launched **StratMarket** in 2026.
+
+---
+
+## 4. The 6-Stage Quantitative Research Pipeline
+1. **01 / Market Data**: Raw tick data, liquidity metrics, and macroeconomic indicators enter the system.
+2. **02 / Feature Discovery**: Clustering algorithms identify genuine structural patterns rather than noise.
+3. **03 / Hypothesis Generation**: Hypotheses are defined mathematically with null hypothesis benchmarks.
+4. **04 / Strategy Synthesis**: Models are compiled into modular Pine Script v5 scripts and Python MT5 execution engines.
+5. **05 / Out-of-Sample Validation**: Every candidate strategy must pass 30% unseen holdout data, 1,000+ Monte Carlo reshufflings, simulated liquidity vacuums, and realistic slippage and commission modeling.
+6. **06 / Live Production Deployment**: Validated candidates are listed on StratMarket with real-time continuous signal dispatch and public trade overlays.
+
+---
+
+## 5. Core Platforms & Products
+
+### StratMarket (https://stratmarket.elvariscapital.in/)
+- **Category**: Flagship Institutional Algorithmic Strategy Marketplace.
+- **Capabilities**:
+  - Live interactive candlestick execution terminal.
+  - Audited performance metrics (Win Rate, Profit Factor, Max Drawdown, Sharpe Ratio).
+  - Continuous tick stream and trade marker overlays.
+  - Sub-50ms VPS signal dispatch to TradingView, Python MetaTrader 5, and FIX gateways.
+  - 100% Free Open Access to interactive charts with zero curve-fitting guarantee.
+
+### ETFlytics (https://www.elvariscapital.in/product/etflytics)
+- Cloud-native ETF analytics engine quantifying hidden overlaps, factor exposures, and portfolio risk concentrations.
+
+### Autonomous Strategy Research (https://www.elvariscapital.in/product/autonomous-strategy-research)
+- Proprietary algorithmic pipeline for hypothesis-driven systematic trading discovery.
+
+---
+
+## 6. Official Verified Links & Social Presence
+- **Official Website**: https://www.elvariscapital.in
+- **StratMarket Platform**: https://stratmarket.elvariscapital.in
+- **CEO Vedant Asawale LinkedIn**: https://www.linkedin.com/in/vedant-asawale-263327364/
+- **MD Sameet Pisal LinkedIn**: https://www.linkedin.com/in/sameet-pisal/
+- **Documentation**: https://www.elvariscapital.in/docs
+- **Sitemap**: https://www.elvariscapital.in/sitemap.xml
+- **Robots Feed**: https://www.elvariscapital.in/robots.txt
